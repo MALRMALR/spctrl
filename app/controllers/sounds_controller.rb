@@ -1,11 +1,17 @@
 class SoundsController < ApplicationController
 
+  def home
+
+  end
+
   def random
     @sounds = Sound.where()
   end
 
   def filter
-    @sounds = Sounds.where('category LIKE ?', "%#{params[:category]}%")
+    @sound1 = Sound.where('category LIKE ?', "%#{params[:category1]}%")
+    @sound2 = Sound.where('category LIKE ?', "%#{params[:category2]}%")
+    @sound3 = Sound.where('category LIKE ?', "%#{params[:category3]}%")
   end
 
   # def search
