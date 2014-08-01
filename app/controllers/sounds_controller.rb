@@ -9,7 +9,7 @@ class SoundsController < ApplicationController
   end
 
   def filter
-    @sounds = Sound.where(category: params[:category])
+      @sounds = Sound.where('category LIKE ?', "%#{params[:category]}%")
   end
 
   # def search
