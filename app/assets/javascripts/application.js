@@ -17,9 +17,14 @@
 
 $(document).ready(function(){
 	console.log("Loaded, bro");
+<<<<<<< HEAD
   $('.play-button').on('click', start);
   $('.stop-button').on('click', stop);
 });
+=======
+	
+})
+>>>>>>> 4c7af2ed404f4191a5c1569c9df8ff986a3407c1
 
 var context = new webkitAudioContext();
 
