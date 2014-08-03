@@ -1,2 +1,16 @@
 // var url = @sound.url
 console.log("hey");
+//Sound 1 Player
+var soundHtml = "<%= j(render @sound1) %>";
+var playerDiv = $(soundHtml);
+playerDiv.appendTo('body').hide().slideDown();
+
+//Sound 2 Player
+var soundHtml = "<%= j(render @sound2) %>";
+var playerDiv = $(soundHtml);
+playerDiv.appendTo('body').hide().slideDown();
+
+//Sound 3 Player
+var soundHtml = "<%= j(render @sound3) %>";
+var playerDiv = $(soundHtml);
+playerDiv.appendTo('body').hide().slideDown();
