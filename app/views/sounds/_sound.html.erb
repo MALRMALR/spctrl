@@ -1,6 +1,6 @@
-<div class="sound-player" id="<%= dom_id(sound) %>">
-  <h2><%= sound.category %></h2>
-  <audio controls autoplay>
-    <source src="<%= sound.url %>" type="audio/mp3">
-  </audio>
-</div>
+  <div class="sound-player" id="<%= dom_id(sound) %>">
+    <h2><%= sound.category %></h2>
+    <audio controls autoplay loop>
+      <source src="<%= sound.url %>" type="audio/mp3">
+    </audio>
+  </div>

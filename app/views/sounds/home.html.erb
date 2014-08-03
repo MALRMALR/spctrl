@@ -1,15 +1,18 @@
 <%= form_tag('/filter', remote: true, method: :get) do %>
-<%= select_tag(:category1, options_for_select([[ "natural", "natural" ],
-                                                 ["city", "city"],
-                                                 ["noise", "noise"],
-                                                 ["percussion", "percussion"],
-                                                 ["melodic", "melodic"]])) %>
-<%= select_tag(:category2, options_for_select([[ "happy", "happy" ],
-                                                 ["sad", "sad"],
-                                                 ["angry", "angry"],
-                                                 ["neutral", "neutral"]])) %>
-<%= select_tag(:category3, options_for_select([[ "sleep", "sleep" ],
-                                                 ["study", "study"],
-                                                 ["walk", "walk"]])) %>
-<%= submit_tag "Create Composition" %>
+  <%= select_tag(:category1, options_for_select([[ "natural", "natural" ],
+                                                   ["city", "city"],
+                                                   ["noise", "noise"],
+                                                   ["percussion", "percussion"],
+                                                   ["melodic", "melodic"]])) %>
+  <%= select_tag(:category2, options_for_select([[ "happy", "happy" ],
+                                                   ["sad", "sad"],
+                                                   ["angry", "angry"],
+                                                   ["neutral", "neutral"]])) %>
+  <%= select_tag(:category3, options_for_select([[ "sleep", "sleep" ],
+                                                   ["study", "study"],
+                                                   ["walk", "walk"]])) %>
+  <%= submit_tag "Create Composition" %>
+<% end %>
+<%= form_tag('/random', remote: true, method: :get) do %>
+<% button_tag "Random" %>
 <% end %>

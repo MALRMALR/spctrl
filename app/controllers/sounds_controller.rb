@@ -8,7 +8,7 @@ class SoundsController < ApplicationController
     @sounds = []
     random = Sound.pluck(:url).sample(3)
     random.each do |link|
-      sounds.push(Sound.where(url: link).sample)
+      @sounds.push(Sound.where(url: link).sample)
     end
   end
 
