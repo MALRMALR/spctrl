@@ -19,5 +19,22 @@ h3 {
   letter-spacing: 15px;
   font-size: 50px;
   text-align: center;
-  color: #7DFF87;
+  color: #fff;
+  text-shadow: 2px 2px #7DB1FF;
+}
+
+#canvas_container {
+  width: 100%;
+  text-align:center;
+}
+canvas#myCanvas {
+  display: inline;
+  border: 1px dotted #000000;
+}
+
+body {
+  background: -webkit-linear-gradient(left, #7DFF87 , #7DB1FF); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #7DFF87, #7DB1FF); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #7DFF87, #7DB1FF); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #7DFF87 , #7DB1FF); /* Standard syntax */
 }

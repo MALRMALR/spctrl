@@ -17,14 +17,11 @@
 
 $(document).ready(function(){
 	console.log("Loaded, bro");
-<<<<<<< HEAD
+
   $('.play-button').on('click', start);
   $('.stop-button').on('click', stop);
+	$('#myCanvas').on('click', canvasPlayAudio);
 });
-=======
-	
-})
->>>>>>> 4c7af2ed404f4191a5c1569c9df8ff986a3407c1
 
 var context = new webkitAudioContext();
 
@@ -57,4 +54,8 @@ function audioRouting(data) {
 
 function playSound() {
   source.noteOn(context.currentTime); // play the source immediately
+}
+
+function canvasPlayAudio() {
+
 }
