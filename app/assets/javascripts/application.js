@@ -16,8 +16,7 @@
 //= require_tree .
 $(document).ready(function(){
 	console.log("Loaded, bro");
-  $('.play-button').on('click', start);
-  $('.stop-button').on('click', stop);
+	
 })
 
 var context = new webkitAudioContext();

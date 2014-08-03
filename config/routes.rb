@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get '/home', to: 'sounds#home'
   get '/filter', to: 'sounds#filter'
   get '/random', to: 'sounds#random'
+  get '/canvas', to: 'sounds#canvas'
 end
