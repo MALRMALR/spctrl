@@ -14,11 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
 $(document).ready(function(){
 	console.log("Loaded, bro");
   $('.play-button').on('click', start);
   $('.stop-button').on('click', stop);
-})
+});
 
 var context = new webkitAudioContext();
 
@@ -37,7 +38,7 @@ function start() {
     var data = request.response;
 
     audioRouting(data);
-  }
+  };
   request.send();
 }
 
