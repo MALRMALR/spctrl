@@ -23,4 +23,8 @@ class SoundsController < ApplicationController
   #   @results = Sounds.where("LOWER(name) like ?", "%#(search_term)%")
   # end
 
+  def canvas
+
+  end
+
 end
