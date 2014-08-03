@@ -16,7 +16,7 @@
 //= require_tree .
 $(document).ready(function(){
 	console.log("Loaded, bro");
-	
+	$('#myCanvas').on('click', canvasPlayAudio);
 })
 
 var context = new webkitAudioContext();
@@ -50,4 +50,8 @@ function audioRouting(data) {
 
 function playSound() {
   source.noteOn(context.currentTime); // play the source immediately
+}
+
+function canvasPlayAudio() {
+
 }

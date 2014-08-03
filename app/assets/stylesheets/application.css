@@ -21,3 +21,12 @@ h1 {
   text-align: center;
   color: #7DFF87;
 }
+
+#canvas_container {
+  width: 100%;
+  text-align:center;
+}
+canvas#myCanvas {
+  display: inline;
+  border: 1px dotted #000000;
+}
