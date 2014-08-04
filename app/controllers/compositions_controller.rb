@@ -20,4 +20,11 @@ class CompositionsController < ApplicationController
     params.require(:composition).permit(:name)
   end
 
+  def destroy
+    @current_user ||= User.find(session[:current_user])
+    @composition = Composition.find(params[:id])
+    @composition.destroy
+    redirect_to user_path(@current_user)
+  end
+
 end
