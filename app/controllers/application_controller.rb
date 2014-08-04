@@ -7,4 +7,20 @@ class ApplicationController < ActionController::Base
     render layout: 'application', text: ''
   end
 
+  #session methods
+  private
+  def current_user
+    User.find(session[:current_user]) if session[:current_user]
+  end
+
+  def authenticate
+    redirect_to login_path unless current_user
+  end
+
+  def authorize
+    unless current_user && current_user.id == params[:id].to_i
+      redirect_to users_path
+    end
+  end
+
 end
