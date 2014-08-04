@@ -24,7 +24,7 @@ class SoundsController < ApplicationController
   # end
 
   def canvas
-
+    @sound = Sound.pluck(:url).sample(1)
   end
 
 end
