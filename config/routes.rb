@@ -9,4 +9,12 @@ Rails.application.routes.draw do
 
   #compositions routes
   get '/compositions/create', to: 'compositions#create'
+
+  #users routes
+  resources :users
+
+  #session
+  get '/login' => 'sessions#new'
+  post '/sessions' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
 end
