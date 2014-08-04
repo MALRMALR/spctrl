@@ -1,16 +1,16 @@
 console.log("hey");
 $('#sound_wrapper').children().remove();
 //Sound 1 Player
-var soundHtml = "<%= j(render @sounds[0]) %>";
-var playerDiv = $(soundHtml);
-playerDiv.appendTo('#sound_wrapper').hide().slideDown();
+var firstSoundHtml = "<%= j(render @sounds[0]) %>";
+var firstAudioPlayerDiv = $(firstSoundHtml);
+firstAudioPlayerDiv.appendTo('#sound_wrapper').hide().slideDown();
 
 //Sound 2 Player
-var soundHtml = "<%= j(render @sounds[1]) %>";
-var playerDiv = $(soundHtml);
-playerDiv.appendTo('#sound_wrapper').hide().slideDown();
+var secondSoundHtml = "<%= j(render @sounds[1]) %>";
+var secondAudioPlayerDiv = $(secondSoundHtml);
+secondAudioPlayerDiv.appendTo('#sound_wrapper').hide().slideDown();
 
 //Sound 3 Player
-var soundHtml = "<%= j(render @sounds[2]) %>";
-var playerDiv = $(soundHtml);
-playerDiv.appendTo('#sound_wrapper').hide().slideDown();
+var thirdSoundHtml = "<%= j(render @sounds[2]) %>";
+var thirdAudioPlayerDiv = $(thirdSoundHtml);
+thirdAudioPlayerDiv.appendTo('#sound_wrapper').hide().slideDown();

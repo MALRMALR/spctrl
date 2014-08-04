@@ -2,19 +2,19 @@
 console.log("hey");
 $('#sound_wrapper').children().remove();
 //Sound 1 Player
-var soundHtml = "<%= j(render @sound1) %>";
-var playerDiv = $(soundHtml);
-playerDiv.appendTo('#sound_wrapper').hide().slideDown();
+var firstSoundHtml = "<%= j(render @sound1) %>";
+var firstAudioPlayerDiv = $(firstSoundHtml);
+firstAudioPlayerDiv.appendTo('#sound_wrapper').hide().slideDown();
 
 //Sound 2 Player
-var soundHtml = "<%= j(render @sound2) %>";
-var playerDiv = $(soundHtml);
-playerDiv.appendTo('#sound_wrapper').hide().slideDown();
+var secondSoundHtml = "<%= j(render @sound2) %>";
+var secondAudioPlayerDiv = $(secondSoundHtml);
+secondAudioPlayerDiv.appendTo('#sound_wrapper').hide().slideDown();
 
 //Sound 3 Player
-var soundHtml = "<%= j(render @sound3) %>";
-var playerDiv = $(soundHtml);
-playerDiv.appendTo('#sound_wrapper').hide().slideDown();
+var thirdSoundHtml = "<%= j(render @sound3) %>";
+var thirdAudioPlayerDiv = $(thirdSoundHtml);
+thirdAudioPlayerDiv.appendTo('#sound_wrapper').hide().slideDown();
 
 //  form to save comp
 var saveCompForm = $("<form action='/compositions/create' method='get'>");

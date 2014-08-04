@@ -20,7 +20,6 @@ Sound.create(category: 'natural', url: 'https://s3.amazonaws.com/spctrl/170515__
 Sound.create(category: 'sleep', url: 'https://s3.amazonaws.com/spctrl/170797__el-mar__20121112-tu-delft-library-general-ambience-from-upper-level.mp3')
 Sound.create(category: 'noise', url: 'https://s3.amazonaws.com/spctrl/172130__n1ghthawk__depot-ambient.mp3')
 Sound.create(category: 'study', url: 'https://s3.amazonaws.com/spctrl/176051__graphite412__soundscape-indoor01.mp3')
-Sound.create(category: 'angry', url: 'https://s3.amazonaws.com/spctrl/179334__jorickhoofd__male-yells-ooooh.mp3')
 Sound.create(category: 'noise', url: 'https://s3.amazonaws.com/spctrl/179897__batman6661__building-rooftops-ambient.mp3')
 Sound.create(category: 'walk', url: 'https://s3.amazonaws.com/spctrl/181222__burning-mir__creepy-sadness+1.mp3')
 Sound.create(category: 'sleep', url: 'https://s3.amazonaws.com/spctrl/183881__erokia__elementary-wave-11.mp3')
