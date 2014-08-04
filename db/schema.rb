@@ -29,10 +29,8 @@ ActiveRecord::Schema.define(version: 20140803235519) do
   end
 
   create_table "sounds", force: true do |t|
-    t.string   "category"
-    t.text     "url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "category"
+    t.text   "url"
   end
 
   create_table "users", force: true do |t|
