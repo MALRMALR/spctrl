@@ -8,12 +8,20 @@
 </head>
 <body>
   <h3>SPCTRL</h3>
-<!-- <audio controls>
-  <source src="https://s3.amazonaws.com/spctrl/100263__sagetyrtle__062510-park.mp3" type="audio/mp3">
-</audio> -->
+<p>
+  <% if session[:current_user] %>
+    <% @current_user ||= User.find(session[:current_user]) %>
+    <%= link_to @current_user.username, user_path(@current_user) %> |
+    <%= link_to 'Sign Out', logout_path %>
+  <% else %>
+    <%= link_to 'Log In', login_path %> |
+    <%= link_to 'Sign Up', new_user_path %>
+  <% end %>
+</p>
+
 <%= yield %>
   <div id="sound_wrapper"></div>
-  
+
 
 
 </body>
