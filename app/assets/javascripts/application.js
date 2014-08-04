@@ -17,6 +17,10 @@
 
 $(document).ready(function(){
 	console.log("Loaded, bro");
-	$('#myCanvas').on('click', init());
+	$('#myCanvas').on('click', clickCanvas);
 })
-window.addEventListener('load', init, false);
+
+
+function clickCanvas() {
+	
+}
