@@ -1,0 +1,17 @@
+<h2><%= @composition.name %></h2>
+
+<div class="sound-player" id="<%= dom_id(@composition) %>">
+  <audio controls autoplay loop>
+    <source src="<%= @composition.sounds[0].url %>" type="audio/mp3">
+  </audio>
+</div>
+<div class="sound-player" id="<%= dom_id(@composition) %>">
+  <audio controls autoplay loop>
+    <source src="<%= @composition.sounds[1].url %>" type="audio/mp3">
+  </audio>
+</div>
+<div class="sound-player" id="<%= dom_id(@composition) %>">
+  <audio controls autoplay loop>
+    <source src="<%= @composition.sounds[2].url %>" type="audio/mp3">
+  </audio>
+</div>

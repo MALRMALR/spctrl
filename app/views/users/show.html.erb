@@ -1,6 +1,6 @@
 <p><%= @user.username %></p>
 <% @user.compositions.each do |composition| %>
   <p>
-    <%= composition.name %>
+    <%= link_to composition.name, "/compositions/#{composition.id}" %>
   </p>
 <% end %>
