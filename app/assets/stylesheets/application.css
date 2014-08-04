@@ -21,7 +21,7 @@ body {
   background: linear-gradient(to right, #7DFF87 , #7DB1FF); /* Standard syntax */
 }
 
-h3, span, footer {
+h3, span, footer, p {
   font-family: "Trebuchet MS";
   font-weight: lighter;
   letter-spacing: 15px;
@@ -29,6 +29,11 @@ h3, span, footer {
   text-align: center;
   color: #fff;
   text-shadow: 2px 2px #7DB1FF;
+}
+
+p {
+  font-size: 14px;
+  letter-spacing: 0.25em;
 }
 
 span {
