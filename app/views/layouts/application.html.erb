@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Spctrl</title>
+  <title>SPCTRL</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -19,10 +19,12 @@
   <% end %>
 </p>
 
-<%= yield %>
-  <div id="sound_wrapper"></div>
-
-
-
+  <div id="main_menu">
+    <span><%= link_to('home', root_path)%></span><span>//</span><span><%= link_to('canvas', canvas_path)%></span>
+    <%= yield %>
+    <div id="sound_wrapper"></div>
 </body>
+<!-- <footer>
+  <p>Made with &hearts; by Christiana Lai, Jon Porras, &#038; Michael Ross</p>
+</footer> -->
 </html>

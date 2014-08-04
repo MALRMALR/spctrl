@@ -13,7 +13,15 @@
  *= require_tree .
  *= require_self
  */
-h3 {
+
+body {
+  background: -webkit-linear-gradient(left, #7DFF87 , #7DB1FF); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #7DFF87, #7DB1FF); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #7DFF87, #7DB1FF); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #7DFF87 , #7DB1FF); /* Standard syntax */
+}
+
+h3, span, footer {
   font-family: "Trebuchet MS";
   font-weight: lighter;
   letter-spacing: 15px;
@@ -23,18 +31,44 @@ h3 {
   text-shadow: 2px 2px #7DB1FF;
 }
 
-#canvas_container {
-  width: 100%;
-  text-align:center;
-}
-canvas#myCanvas {
-  display: inline;
-  border: 1px dotted #000000;
+span {
+  font-size: 15px;
+  margin: 0 10px;
 }
 
-body {
-  background: -webkit-linear-gradient(left, #7DFF87 , #7DB1FF); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, #7DFF87, #7DB1FF); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, #7DFF87, #7DB1FF); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, #7DFF87 , #7DB1FF); /* Standard syntax */
+a {
+  text-decoration: none;
+  display: inline;
+}
+
+a:visited {
+  color: #fff;
+}
+
+a:hover {
+  color: #7DFDFF;
+}
+
+#canvas_container, #main_menu {
+  width: 100%;
+  text-align: center;
+}
+
+canvas#myCanvas {
+  display: inline;
+  border: 2px double #fff;
+  background: -webkit-linear-gradient(left, #7DFDFF, #85E895); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #7DFDFF, #85E895); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #7DFDFF, #85E895); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right , #7DFDFF, #85E895); /* Standard syntax */
+}
+
+#main_menu {
+  padding-bottom: 30px;
+  text-transform: uppercase;
+}
+
+footer {
+  font-size: 12px;
+  letter-spacing: 0.25em;
 }
