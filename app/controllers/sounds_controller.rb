@@ -1,7 +1,7 @@
 class SoundsController < ApplicationController
 
   def home
-
+    @user = User.new
   end
 
   def random

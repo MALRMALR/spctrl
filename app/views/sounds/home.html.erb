@@ -16,3 +16,12 @@
 <%= form_tag('/random', remote: true, method: :get) do %>
 <% button_tag "Random" %>
 <% end %>
+
+<div id="signup-form">
+  <%= render partial: 'users/form', locals: {user: @user} %>
+</div>
+
+
+<div id="register-form">
+  <%= render partial: 'sessions/new' %>
+</div>

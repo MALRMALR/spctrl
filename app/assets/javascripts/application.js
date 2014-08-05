@@ -17,10 +17,53 @@
 
 $(document).ready(function(){
 	console.log("Loaded, bro");
-	$('#myCanvas').on('click', clickCanvas);
-})
 
+  $('.play-button').on('click', start);
+  $('.stop-button').on('click', stop);
+	$('#myCanvas').on('click', canvasPlayAudio);
+	$('body').on('click', '#login', showLogIn);
+	$('body').on('click', '#sign_up', showSignUp);
+	$('#modal').on('click', '#exit', hideModal);
+	// $('#modal').on('click', '.logIn', logIn);
+});
+
+var context = new webkitAudioContext();
+
+function stop() {
+  source.noteOff(context.currentTime); // stop the source immediately
+}
+
+function start() {
+  // Note: this will load asynchronously
+  var request = new XMLHttpRequest();
+  request.open('GET', url, true);
+  request.responseType = "arraybuffer"; // Read as binary data
+
+  // Asynchronous callback
+  request.onload = function() {
+    var data = request.response;
+
+    audioRouting(data);
+  };
+  request.send();
+}
+
+function audioRouting(data) {
+  source = context.createBufferSource(); // Create Sound source
+  buffer = context.createBuffer(data, true /*make mono*/); // Create source buffer from raw binary
+  source.buffer = buffer; // Add buffered data to object
+  source.connect(context.destination);  // Connect sound source to output
+  playSound(source); // Pass the object to the play function
+}
+
+function playSound() {
+  source.noteOn(context.currentTime); // play the source immediately
+}
+
+function canvasPlayAudio() {
+	$('#myCanvas').on('click', clickCanvas);
+}
 
 function clickCanvas() {
-	
+
 }

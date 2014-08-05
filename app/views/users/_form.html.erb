@@ -1,11 +1,11 @@
 <ul>
-  <% @user.errors.full_messages.each do |message| %>
+  <% user.errors.full_messages.each do |message| %>
     <li><p><%= message %></p></li>
   <% end %>
 </ul>
 
 <div class="form_fields">
-  <%= form_for @user do |f| %>
+  <%= form_for user do |f| %>
   <p class="form_label"><%= f.label :username %></p>
   <p><%= f.text_field :username %></p>
 
