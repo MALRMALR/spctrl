@@ -3,6 +3,7 @@ require 'rails_helper'
 describe Sound do
   let(:sound1) {Sound.create(category: "melodic", url: "https://s3.amazonaws.com/spctrl/207558__edtijo__happy-guitar.mp3")}
   let(:sound2) {Sound.create(category: "city", url: "https://s3.amazonaws.com/spctrl/100263__sagetyrtle__062510-park.mp3")}
+  let(:sound2)  {Sound.create(category: "city", url: "https://s3.amazonaws.com/spctrl/100263__sagetyrtle__062510-park.mp3")}
 
   it { is_expected.to have_and_belong_to_many :compositions }
 

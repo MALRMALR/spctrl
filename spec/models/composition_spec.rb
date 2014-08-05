@@ -27,4 +27,8 @@ describe Composition do
     # it "is valid when created with three sounds" do
     #
     # end
+
+  it { is_expected.to have_and_belong_to_many :sounds }
+  it { is_expected.to belong_to :user }
+
 end

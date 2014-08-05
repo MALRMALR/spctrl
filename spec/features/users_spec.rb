@@ -31,4 +31,5 @@ describe "Users", js: true do
     visit(root_path)
     log_in()
   end
+
 end
