@@ -15,10 +15,31 @@
  */
 
 body {
-  background: -webkit-linear-gradient(left, #7DFF87 , #7DB1FF); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, #7DFF87, #7DB1FF); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, #7DFF87, #7DB1FF); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, #7DFF87 , #7DB1FF); /* Standard syntax */
+  background-image: url('http://i.imgur.com/7IM6va5.jpg');
+  background-size: fill;
+  background-repeat: no-repeat;
+}
+
+IMG.logo {
+  display: block;
+  padding-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#category1 {
+  background-color: #FFFFFF;
+  border: 5px solid whitesmoke;
+}
+
+#category2 {
+  background-color: #FFFFFF;
+  border: 5px solid whitesmoke;
+}
+
+#category3 {
+  background-color: #FFFFFF;
+  border: 5px solid whitesmoke;
 }
 
 h3, span, footer, p {
@@ -76,4 +97,41 @@ canvas#myCanvas {
 footer {
   font-size: 12px;
   letter-spacing: 0.25em;
+}
+
+#forms-container {
+
+}
+
+#modal {
+  position: absolute;
+  z-index: 10;
+  background: rgba(0,0,0,.8);
+  width: 400px;
+  display:none;
+  color: whitesmoke;
+  top:20%;
+  left:30%;
+}
+
+#exit {
+  float: right;
+  padding-top: 15px;
+}
+
+.user_login {
+  padding: 28px;
+}
+
+.user_signup {
+  text-align: center;
+/*   display: block; */
+}
+
+#signup-form {
+  display: none;
+}
+
+#register-form {
+  display: none;
 }

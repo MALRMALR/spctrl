@@ -1,11 +1,11 @@
 class SoundsController < ApplicationController
 
   def home
-
+    @user = User.new
   end
 
   def random
-    sounds = []
+    @sounds = []
     random = Sound.pluck(:url).sample(3)
     random.each do |link|
       @sounds.push(Sound.where(url: link).sample)

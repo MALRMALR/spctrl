@@ -17,11 +17,14 @@
 
 $(document).ready(function(){
 	console.log("Loaded, bro");
-<<<<<<< HEAD
 
   $('.play-button').on('click', start);
   $('.stop-button').on('click', stop);
 	$('#myCanvas').on('click', canvasPlayAudio);
+	$('body').on('click', '#login', showLogIn);
+	$('body').on('click', '#sign_up', showSignUp);
+	$('#modal').on('click', '#exit', hideModal);
+	// $('#modal').on('click', '.logIn', logIn);
 });
 
 var context = new webkitAudioContext();
@@ -58,12 +61,9 @@ function playSound() {
 }
 
 function canvasPlayAudio() {
-=======
 	$('#myCanvas').on('click', clickCanvas);
-})
-
->>>>>>> d643a2285e3b2c57242133ef06aa448c007e3b6b
+}
 
 function clickCanvas() {
-	
+
 }
