@@ -1,7 +1,10 @@
-<p><%= @user.username %></p>
+<h4>Account Information</h4>
+<p>Username: <%= @user.username %></p>
+<p><%= link_to "DELETE ACCOUNT", user_path(@user), method: :delete,  data: { confirm: "Are you sure you want to delete your account?" } %></p>
+<h4>Saved Compositions</h4>
 <% @user.compositions.each do |composition| %>
   <p>
-    <%= link_to composition.name, "/compositions/#{composition.id}" %>
+    <%= link_to composition.name, "/compositions/#{composition.id}" %><span>//</span>
+    <%= link_to 'Delete Composition', [@current_user, composition], method: :delete, data: { confirm: "Are you sure you want to delete this composition?" } %></p>
   </p>
-  <p><%= link_to "DELETE ACCOUNT", user_path(@user), method: :delete %></p>
 <% end %>
