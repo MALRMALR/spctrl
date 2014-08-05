@@ -8,9 +8,8 @@
 </head>
 <body>
 
-  <h3>SPCTRL</h3>
   <img class="logo" src="http://i.imgur.com/olTjcfC.png">
-<!--   <h3>SPCTRL</h3> -->
+
 <p>
   <div id='forms-container'>
   <% if session[:current_user] %>
@@ -19,7 +18,7 @@
     <%= link_to 'Sign Out', logout_path %>
   <% else %>
       <div id='modal'><span id='exit'>X</span></div>
-      <span id='login'>Login</span>
+      <span id='login'>Login</span> 
       <span id='sign_up'>Sign Up</span>
     </div>
   <% end %>
