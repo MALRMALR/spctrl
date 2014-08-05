@@ -6,10 +6,11 @@ class CompositionsController < ApplicationController
     sounds.push(Sound.find(params[:sound_id1]))
     sounds.push(Sound.find(params[:sound_id2]))
     sounds.push(Sound.find(params[:sound_id3]))
+    # Sound.select_sounds(params)
     composition = Composition.create(name: params[:name])
     composition.sounds << sounds
     @current_user.compositions.push(composition)
-    redirect_to user_path(@current_user)
+    redirect_to @current_user
   end
 
   def show
@@ -24,7 +25,7 @@ class CompositionsController < ApplicationController
     @current_user ||= User.find(session[:current_user])
     @composition = Composition.find(params[:id])
     @composition.destroy
-    redirect_to user_path(@current_user)
+    redirect_to @current_user
   end
 
 end
