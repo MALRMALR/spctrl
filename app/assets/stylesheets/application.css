@@ -27,20 +27,10 @@ IMG.logo {
   margin-right: auto;
 }
 
-#category1 {
-  background-color: #FFFFFF;
+#category1, #category2, #category3 {
   border: 5px solid whitesmoke;
 }
 
-#category2 {
-  background-color: #FFFFFF;
-  border: 5px solid whitesmoke;
-}
-
-#category3 {
-  background-color: #FFFFFF;
-  border: 5px solid whitesmoke;
-}
 
 h3, h4, span, footer, p {
   font-family: "Trebuchet MS";
@@ -52,6 +42,16 @@ h3, h4, span, footer, p {
   text-shadow: 2px 2px #7DB1FF;
 }
 
+span {
+  font-size: 15px;
+  margin: 0 10px;
+}
+
+footer {
+  font-size: 12px;
+  letter-spacing: 0.25em;
+}
+
 h4 {
   font-size: 20px;
   letter-spacing: 0.3em;
@@ -59,11 +59,6 @@ h4 {
 p {
   font-size: 14px;
   letter-spacing: 0.25em;
-}
-
-span {
-  font-size: 15px;
-  margin: 0 10px;
 }
 
 a {
@@ -93,14 +88,13 @@ canvas#myCanvas {
   background: linear-gradient(to right , rgba(130, 78, 99, 0.97), rgba(51, 62, 97, 0.97)); /* Standard syntax */
 }
 
+canvas#myCanvas:hover {
+  cursor: crosshair;
+}
+
 #main_menu {
   padding: 30px 0;
   text-transform: uppercase;
-}
-
-footer {
-  font-size: 12px;
-  letter-spacing: 0.25em;
 }
 
 #modal {
@@ -119,6 +113,14 @@ footer {
   padding-top: 15px;
 }
 
+#signup-form {
+  display: none;
+}
+
+#register-form {
+  display: none;
+}
+
 .user_login {
   padding: 28px;
 }
@@ -126,12 +128,4 @@ footer {
 .user_signup {
   text-align: center;
 /*   display: block; */
-}
-
-#signup-form {
-  display: none;
-}
-
-#register-form {
-  display: none;
 }

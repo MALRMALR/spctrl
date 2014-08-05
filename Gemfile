@@ -35,6 +35,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'capybara', '~> 2.4.0'
   gem 'selenium-webdriver', '~> 2.42.0'
+  gem 'shoulda-matchers', require: false
 end
 
 
@@ -46,5 +47,3 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
-gem 'pry-rails'
