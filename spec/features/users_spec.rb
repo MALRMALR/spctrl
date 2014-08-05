@@ -13,3 +13,5 @@ describe "Users", js: true do
     visit(root_path)
 
   end
+
+end
