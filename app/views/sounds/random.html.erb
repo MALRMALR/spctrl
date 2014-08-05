@@ -1,7 +1,5 @@
-<h2><%= @composition.name %></h2>
-
 <div class="demo" id="sliders">
-  <audio autoplay controls="true" loop="true" src="<%= @composition.sounds[0].url %>" class="mutetabId_2442606">
+  <audio autoplay controls="true" loop="true" src="<%= @sounds[0].url %>" class="mutetabId_2442606">
       Your browser doesn't support the audio element.
   </audio>
 
@@ -13,7 +11,7 @@
     LowPass Filter: <input max="22050" min="0" name="filter" step="200" type="range" value="6400">
   </div>
 
-  <audio autoplay controls="true" loop="true" src="<%= @composition.sounds[1].url %>" class="mutetabId_2442606">
+  <audio autoplay controls="true" loop="true" src="<%= @sounds[1].url %>" class="mutetabId_2442606">
     Your browser doesn't support the audio element.
   </audio>
 
@@ -25,7 +23,7 @@
     LowPass Filter: <input max="22050" min="0" name="filter2" step="200" type="range" value="6400">
   </div>
 
-  <audio autoplay controls="true" loop="true" src="<%= @composition.sounds[2].url %>" class="mutetabId_2442606">
+  <audio autoplay controls="true" loop="true" src="<%= @sounds[2].url %>" class="mutetabId_2442606">
     Your browser doesn't support the audio element.
   </audio>
 
@@ -37,5 +35,3 @@
     LowPass Filter: <input max="22050" min="0" name="filter3" step="200" type="range" value="6400">
   </div>
 </div>
-
-<%= link_to 'Delete Composition', "/compositions/#{@composition.id}", method: :delete %>

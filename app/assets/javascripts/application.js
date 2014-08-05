@@ -10,6 +10,8 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require AudioContextMonkeyPatch.js
+//= require simple_reverb.js
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
@@ -18,52 +20,94 @@
 $(document).ready(function(){
 	console.log("Loaded, bro");
 
-  $('.play-button').on('click', start);
-  $('.stop-button').on('click', stop);
-	$('#myCanvas').on('click', canvasPlayAudio);
 	$('body').on('click', '#login', showLogIn);
 	$('body').on('click', '#sign_up', showSignUp);
 	$('#modal').on('click', '#exit', hideModal);
 	// $('#modal').on('click', '.logIn', logIn);
+
+
+	//Wiring Web Audio Effects
+	var ctx = new AudioContext();
+	//player 1
+	var audioElement = $('#sliders audio')[0]
+	wireEffects(audioElement, ctx, 'delayTime', 'feedback', 'frequency', 'reverb', 'filter');
+
+	//player 2
+	var audioElement2 = $('#sliders audio')[1]
+	wireEffects(audioElement2, ctx, 'delayTime2', 'feedback2', 'frequency2', 'reverb2', 'filter2');
+
+	//player 3
+	var audioElement3 = $('#sliders audio')[2]
+	wireEffects(audioElement3, ctx, 'delayTime3', 'feedback3', 'frequency3', 'reverb3', 'filter3');
+
 });
 
-var context = new webkitAudioContext();
+function wireEffects(audioElement, ctx, inputName1, inputName2, inputName3, inputName4, inputName5) {
+	audioElement.addEventListener('playing', function(){
+		var source = ctx.createMediaElementSource(audioElement);
 
-function stop() {
-  source.noteOff(context.currentTime); // stop the source immediately
-}
+		//delay features
+		var delay = ctx.createDelay();
+		delay.delayTime.value = 0;
 
-function start() {
-  // Note: this will load asynchronously
-  var request = new XMLHttpRequest();
-  request.open('GET', url, true);
-  request.responseType = "arraybuffer"; // Read as binary data
+		var feedback = ctx.createGain();
+		feedback.gain.value = 0;
 
-  // Asynchronous callback
-  request.onload = function() {
-    var data = request.response;
+		var filter = ctx.createBiquadFilter();
+		filter.frequency.value = 1000;
 
-    audioRouting(data);
-  };
-  request.send();
-}
+		delay.connect(feedback);
+		feedback.connect(filter);
+		filter.connect(delay);
 
-function audioRouting(data) {
-  source = context.createBufferSource(); // Create Sound source
-  buffer = context.createBuffer(data, true /*make mono*/); // Create source buffer from raw binary
-  source.buffer = buffer; // Add buffered data to object
-  source.connect(context.destination);  // Connect sound source to output
-  playSound(source); // Pass the object to the play function
-}
+		//reverb
+		var verb = new SimpleReverb(ctx, {
+			seconds: 0,
+			decay: 0,
+			reverse: 0
+		});
+		verb.seconds = 0.01;
+		verb.decay = 0.01;
 
-function playSound() {
-  source.noteOn(context.currentTime); // play the source immediately
-}
+		//filter
+		var biFilter = ctx.createBiquadFilter();
+		biFilter.type = biFilter.LOWPASS;
+		biFilter.frequency.value = 100;
+		biFilter.gain.value = 100;
 
-function canvasPlayAudio() {
-	$('#myCanvas').on('click', clickCanvas);
-}
 
-function clickCanvas() {
+		//effect connections
+		source.connect(delay);
+		delay.connect(verb.input);
+		source.connect(biFilter);
+		source.connect(ctx.destination);
+		delay.connect(ctx.destination);
+		verb.connect(ctx.destination);
+		biFilter.connect(ctx.destination);
 
+		var controls = $("div#sliders");
+		//delay controls
+		controls.find("input[name='"+inputName1+"']").on('input', function() {
+			delay.delayTime.value = $(this).val();
+		});
+
+		controls.find("input[name='"+inputName2+"']").on('input', function() {
+			feedback.gain.value = $(this).val();
+		});
+
+		controls.find("input[name='"+inputName3+"']").on('input', function() {
+			filter.frequency.value = $(this).val();
+		});
+
+		//reverb control
+		controls.find("input[name='"+inputName4+"']").on('input', function() {
+			verb.seconds = parseInt($(this).val()) * 2;
+			verb.decay = $(this).val() * 0.5;
+		});
+		//biquad filter controll
+		controls.find("input[name='"+inputName5+"']").on('input', function() {
+			biFilter.frequency.value = parseInt($(this).val());
+			console.log(biFilter.frequency.value);
+		});
+	});
 }

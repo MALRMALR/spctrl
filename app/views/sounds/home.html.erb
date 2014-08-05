@@ -1,4 +1,4 @@
-<%= form_tag('/filter', remote: true, method: :get) do %>
+<%= form_tag('/filter', method: :get) do %>
   <%= select_tag(:category1, options_for_select([[ "natural", "natural" ],
                                                    ["city", "city"],
                                                    ["noise", "noise"],
@@ -13,7 +13,7 @@
                                                    ["walk", "walk"]])) %>
   <%= submit_tag "Create Composition" %>
 <% end %>
-<%= form_tag('/random', remote: true, method: :get) do %>
+<%= form_tag('/random', method: :get) do %>
 <% button_tag "Random" %>
 <% end %>
 
