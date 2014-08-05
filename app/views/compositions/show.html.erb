@@ -15,3 +15,5 @@
     <source src="<%= @composition.sounds[2].url %>" type="audio/mp3">
   </audio>
 </div>
+
+<%= link_to 'Delete Composition', "/compositions/#{@composition.id}", method: :delete %>

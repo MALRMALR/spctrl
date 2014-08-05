@@ -15,4 +15,12 @@ var thirdSoundHtml = "<%= j(render @sounds[2]) %>";
 var thirdAudioPlayerDiv = $(thirdSoundHtml);
 thirdAudioPlayerDiv.appendTo('#sound_wrapper').hide().slideDown();
 
-// Form to save composition
+//  form to save comp
+var saveCompForm = $("<form action='/compositions/create' method='get'>");
+var hiddenInputOne = $("<input type='hidden' name='sound_id1' value='<%= @sounds[0].id %>' >");
+var hiddenInputTwo = $("<input type='hidden' name='sound_id2' value='<%= @sounds[1].id %>' >");
+var hiddenInputThree = $("<input type='hidden' name='sound_id3' value='<%= @sounds[2].id %>' >");
+var compName = $("<input type='text' name='name' value='Composition Name'>");
+var submitButton = $("<input type='submit' value='Save Composition'>");
+var form = saveCompForm.append(hiddenInputOne).append(hiddenInputTwo).append(hiddenInputThree).append(compName).append(submitButton);
+form.appendTo('#sound_wrapper');
