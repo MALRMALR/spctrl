@@ -3,4 +3,5 @@
   <p>
     <%= link_to composition.name, "/compositions/#{composition.id}" %>
   </p>
+  <p><%= link_to "DELETE ACCOUNT", user_path(@user), method: :delete %></p>
 <% end %>

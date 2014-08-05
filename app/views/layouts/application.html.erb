@@ -7,26 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
   <img class="logo" src="http://i.imgur.com/olTjcfC.png">
-
-<p>
-  <div id='forms-container'>
-  <% if session[:current_user] %>
-    <% @current_user ||= User.find(session[:current_user]) %>
-    <%= link_to @current_user.username, user_path(@current_user) %> |
-    <%= link_to 'Sign Out', logout_path %>
-  <% else %>
-      <div id='modal'><span id='exit'>X</span></div>
-      <span id='login'>Login</span>
-      <span id='sign_up'>Sign Up</span>
-    </div>
-  <% end %>
-</p>
-
 
   <div id="main_menu">
     <span><%= link_to('home', root_path)%></span><span>//</span><span><%= link_to('canvas', canvas_path)%></span>
+    <span><span>//</span>
+      <% if session[:current_user] %>
+        <% @current_user ||= User.find(session[:current_user]) %>
+        <%= link_to @current_user.username, user_path(@current_user) %><span>//</span>
+        <%= link_to 'Sign Out', logout_path %>
+      <% else %>
+        <div id='modal'><span id='exit'>X</span></div>
+        <span id='login'>Login</span>
+        <span id='sign_up'>Sign Up</span></span>
+      <% end %>
+    </span>
   </div>
     <%= yield %>
     <div id="sound_wrapper"></div>

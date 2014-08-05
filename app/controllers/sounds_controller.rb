@@ -5,17 +5,20 @@ class SoundsController < ApplicationController
   end
 
   def random
-    @sounds = []
     random = Sound.pluck(:url).sample(3)
-    random.each do |link|
-      @sounds.push(Sound.where(url: link).sample)
-    end
+    @sounds = random.map{|link| Sound.where(url: link).sample }
+    # @sounds = []
+    # random.each do |link|
+    #   @sounds.push(Sound.where(url: link).sample)
+    # end
   end
 
   def filter
     @sound1 = Sound.where('category LIKE ?', "%#{params[:category1]}%").sample(1)
     @sound2 = Sound.where('category LIKE ?', "%#{params[:category2]}%").sample(1)
     @sound3 = Sound.where('category LIKE ?', "%#{params[:category3]}%").sample(1)
+    # Sound.where(category: params[:category1])
+    # @sounds = Sound.filter_sounds(params)
   end
 
   # def search
