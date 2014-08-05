@@ -29,6 +29,15 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+group :development, :test do
+  gem 'pry-rails'
+  gem 'binding_of_caller'
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'capybara', '~> 2.4.0'
+  gem 'selenium-webdriver', '~> 2.42.0'
+end
+
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
