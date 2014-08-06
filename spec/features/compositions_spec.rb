@@ -16,9 +16,9 @@ describe "Compositions", js: true do
   end
 
   it "saves a composition" do
-    log_in('mck', 'abc')
+    log_in('DrRobotMck', 'abc')
     create_composition
-    fill_in('name', :with => 'My Swag Mix')
+    fill_in('name', :with => 'My Swaggity Swag Mix')
     click_button('Save Composition')
   end
 
