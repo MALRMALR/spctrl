@@ -61,7 +61,7 @@ def saves_composition()
   click_button('Save Composition')
 end
 
-def create_composition()
+def show_composition()
   find('#category1').find(:xpath, 'option[4]').click
   find('#category2').find(:xpath, 'option[3]').click
   find('#category3').find(:xpath, 'option[1]').click
