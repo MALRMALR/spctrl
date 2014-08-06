@@ -48,30 +48,8 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 end
 
-
-def create_composition()
-  find('#category1').find(:xpath, 'option[4]').click
-  find('#category2').find(:xpath, 'option[3]').click
-  find('#category3').find(:xpath, 'option[1]').click
-  click_button('Create Composition')
-end
-
-def create_random_composition()
-  click_button('Random')
-end
-
-def saves_composition()
-  click_button('Save Composition')
-end
-
-def show_composition()
-  find('#category1').find(:xpath, 'option[4]').click
-  find('#category2').find(:xpath, 'option[3]').click
-  find('#category3').find(:xpath, 'option[1]').click
-  click_button('Create Composition')
-end
-
 def sign_up()
+  visit(root_path)
   page.find('#sign_up').click
   fill_in('Username', :with => 'DrRobotMck')
   fill_in('Password', :with => 'abc')
@@ -80,6 +58,8 @@ def sign_up()
 end
 
 def log_in(username, password)
+  User.create(username: username, password: password )
+  visit(root_path)
   page.find('#login').click
   fill_in('Username', :with => username)
   fill_in('Password', :with => password)
@@ -92,4 +72,30 @@ end
 
 def delete_user()
   click_link('DELETE ACCOUNT')
+end
+
+def create_composition()
+  visit(root_path)
+  find('#category1').find(:xpath, 'option[4]').click
+  find('#category2').find(:xpath, 'option[3]').click
+  find('#category3').find(:xpath, 'option[1]').click
+  click_button('Create Composition')
+end
+
+def create_random_composition()
+  visit(root_path)
+  click_button('Random')
+end
+
+def show_composition()
+  visit(root_path)
+  find('#category1').find(:xpath, 'option[4]').click
+  find('#category2').find(:xpath, 'option[3]').click
+  find('#category3').find(:xpath, 'option[1]').click
+  click_button('Create Composition')
+end
+
+def view_canvas()
+  visit(root_path)
+  click_link('Canvas')
 end

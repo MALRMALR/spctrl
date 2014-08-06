@@ -26,8 +26,19 @@
       <% end %>
     </span>
   </div>
+
+  <div id="signup-form">
+    <%= render partial: 'users/form', locals: {user: @user} %>
+  </div>
+
+  <div id="register-form">
+    <%= render partial: 'sessions/form' %>
+  </div>
+
     <%= yield %>
     <div id="sound_wrapper"></div>
+
+
 
 </body>
 <!-- <footer>

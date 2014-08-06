@@ -8,34 +8,29 @@ describe "Users", js: true do
   end
 
   it "signs up if no user is logged in" do
-    visit(root_path)
     sign_up()
   end
 
   it "logs in if there is no one logged in" do
-    visit(root_path)
     log_in(@test_user.username, 'abc')
   end
 
-  it "logs out" do
-    visit(root_path)
+  it "logs out of session" do
     log_in(@test_user.username, 'abc')
     visit(root_path)
     log_out()
   end
 
-  it "deletes" do
-    visit(root_path)
+  it "deletes own account" do
     log_in(@test_user.username, 'abc')
     click_link('DrRobotMck')
     delete_user()
   end
 
   it "views compositions" do
-    visit(root_path)
     log_in(@test_user.username, 'abc')
-    creates_composition()
-    saves_composition()
+    create_composition()
+    click_button('Save Composition')
   end
 
 end
