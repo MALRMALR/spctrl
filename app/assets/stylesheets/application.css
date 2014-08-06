@@ -38,8 +38,7 @@ h3, h4, span, footer, p {
   letter-spacing: 15px;
   font-size: 50px;
   text-align: center;
-  color: #fff;
-  text-shadow: 2px 2px #7DB1FF;
+  color: #FFF;
 }
 
 span {
@@ -61,13 +60,33 @@ p {
   letter-spacing: 0.25em;
 }
 
+.form_label {
+  padding: 10px;
+}
+
+.field {
+  padding: 10px;
+}
+
+.btn {
+  border: 3px solid #FFF;
+  background: #000;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  color: #FFF;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 a {
   text-decoration: none;
   display: inline;
 }
 
 a:visited {
-  color: #fff;
+  color: #FFF;
 }
 
 a:hover {
@@ -81,7 +100,7 @@ a:hover {
 
 canvas#myCanvas {
   display: inline;
-  border: 2px double #fff;
+  border: 2px double #FFF;
   background: -webkit-linear-gradient(left, rgba(130, 78, 99, 0.97), rgba(51, 62, 97, 0.97)); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(right, rgba(130, 78, 99, 0.97), rgba(51, 62, 97, 0.97)); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(right, rgba(130, 78, 99, 0.97), rgba(51, 62, 97, 0.97)); /* For Firefox 3.6 to 15 */
@@ -99,7 +118,7 @@ canvas#myCanvas:hover {
 
 #modal {
   position: absolute;
-  z-index: 1000;
+  z-index: 10;
   background: rgba(0,0,0,.8);
   width: 400px;
   display:none;
