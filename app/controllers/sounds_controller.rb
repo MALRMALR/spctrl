@@ -5,6 +5,7 @@ class SoundsController < ApplicationController
   end
 
   def random
+    @user = User.new
     random = Sound.pluck(:url).sample(3)
     @sounds = random.map{|link| Sound.where(url: link).sample }
     # @sounds = []
@@ -14,6 +15,7 @@ class SoundsController < ApplicationController
   end
 
   def filter
+    @user = User.new
     @sound1 = Sound.where('category LIKE ?', "%#{params[:category1]}%").sample(1)
     @sound2 = Sound.where('category LIKE ?', "%#{params[:category2]}%").sample(1)
     @sound3 = Sound.where('category LIKE ?', "%#{params[:category3]}%").sample(1)

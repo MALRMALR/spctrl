@@ -25,6 +25,9 @@ $(document).ready(function(){
 	$('#modal').on('click', '#exit', hideModal);
 	// $('#modal').on('click', '.logIn', logIn);
 
+	// Calls Click Events for Canvas Page
+	clickEvents();
+
 
 	//Wiring Web Audio Effects
 	var ctx = new AudioContext();

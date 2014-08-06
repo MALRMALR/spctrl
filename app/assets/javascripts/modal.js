@@ -1,23 +1,24 @@
-
+$(document).ready(function(){
+  signUpForm = $('#signup-form');
+  signUpForm.remove();
+  registerForm = $('#register-form');
+  registerForm.remove();
+  modal = $('#modal');
+  modal.find('form').remove();
+});
 
 function showSignUp() {
-  var signUpForm = $('#signup-form');
-  signUpForm.remove();
-  var modal = $('#modal');
-  modal.find('form').remove();
-  var form = modal.append(signUpForm);
+  $('.form-container').empty();
+  modal.find('.form-container').append(signUpForm);
   signUpForm.show();
-  form.show();
+  modal.show();
 }
 
 function showLogIn() {
-  var registerForm = $('#register-form');
-  registerForm.remove();
-  var modal = $('#modal');
-  modal.find('form').remove();
-  var form = modal.append(registerForm);
+  $('.form-container').empty();
+  modal.find('.form-container').append(registerForm);
   registerForm.show();
-  form.show();
+  modal.show();
 }
 
 function hideModal() {
@@ -36,7 +37,6 @@ function hideModal() {
 //   var form = modal.append(signUpForm);
 //   form.show();
 // }
-
 
 // function showLogIn() {
 //   var modal = $('#modal');

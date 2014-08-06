@@ -1,3 +1,13 @@
+<h3>LOGIN</h3>
+<%= form_tag sessions_path do %>
+  <p class="form_label"><%= label_tag :username %></p>
+  <p><%= text_field_tag :username %></p>
+  <p class="form_label"><%= label_tag :password %></p>
+  <p><%= password_field_tag :password %></p>
+  <%= submit_tag 'Log In' %>
+<% end %>
+<p><%= link_to 'Create a Profile', new_user_path %></p>
+
 <div class="form_container">
     <h3>LOGIN</h3>
       <%= form_tag sessions_path do %>

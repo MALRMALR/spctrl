@@ -17,7 +17,10 @@
         <%= link_to @current_user.username, user_path(@current_user) %><span> //</span>
         <%= link_to 'Sign Out', logout_path %>
       <% else %>
-        <div id='modal'><span id='exit'>X</span></div>
+        <div id='modal'>
+          <span id='exit'>X</span>
+          <div class="form-container"></div>
+          </div>
         <span id='login'>Login</span><span>//</span>
         <span id='sign_up'>Sign Up</span></span>
       <% end %>
