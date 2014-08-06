@@ -2,25 +2,10 @@ require 'rails_helper'
 
 describe "Users", js: true do
 
-  def sign_up()
-    page.find('#sign_up').click
-    fill_in('Username', :with => 'DrRobotMck')
-    fill_in('Password', :with => 'abc')
-    fill_in('user[password_confirmation]', :with => 'abc')
-    click_button('Update')
+  before(:all) do
+    User.destroy_all
+    @test_user = User.create!(username: "DrRobotMck", password: "abc")
   end
-
-  def log_in()
-    page.find('#login').click
-    fill_in('Username', :with => 'DrRobotMck')
-    fill_in('Password', :with => 'abc')
-    click_button('Log In')
-  end
-
-  # before(:each) do
-  #   User.destroy_all
-  #   User.create!(username: "adambreezy", password: "abc")
-  # end
 
   it "signs up if no user is logged in" do
     visit(root_path)
@@ -29,6 +14,28 @@ describe "Users", js: true do
 
   it "logs in if there is no one logged in" do
     visit(root_path)
-    log_in()
+    log_in(@test_user.username, 'abc')
   end
+
+  it "logs out" do
+    visit(root_path)
+    log_in(@test_user.username, 'abc')
+    visit(root_path)
+    log_out()
+  end
+
+  it "deletes" do
+    visit(root_path)
+    log_in(@test_user.username, 'abc')
+    click_link('DrRobotMck')
+    delete_user()
+  end
+
+  it "views compositions" do
+    visit(root_path)
+    log_in(@test_user.username, 'abc')
+    creates_composition()
+    saves_composition()
+  end
+
 end

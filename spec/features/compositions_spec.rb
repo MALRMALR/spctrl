@@ -2,17 +2,27 @@ require 'rails_helper'
 
 describe "Compositions", js: true do
 
-  it "should create a new composition with three sounds when random button is clicked" do
-    Sound.create!(category: 'city', url: 'https://s3.amazonaws.com/spctrl/100263__sagetyrtle__062510-park.mp3')
-    Sound.create!(category: 'noise', url: 'https://s3.amazonaws.com/spctrl/117555__kougloff__moteur.mp3')
-    Sound.create!(category: 'sleep', url: 'https://s3.amazonaws.com/spctrl/117782__burning-mir__ambient-sounds-14+1.mp3')
+  it "shows a new composition with categories melodic, happy, and study" do
     visit(root_path)
-
-    click_button('Random')
-    composition = find("#sound-wrapper")
-
-    expect(composition).to have_content("city")
-    expect(composition).to have_content("noise")
-    expect(composition).to have_content("sleep")
+    show_composition
   end
+
+  it "edits the composition" do
+    visit(root_path)
+    create_composition
+    expect(page).to have_content('delayTime')
+  end
+
+  it "creates a random composition" do
+    visit(root_path)
+    create_random_composition
+  end
+
+  it "saves a composition" do
+    visit(root_path)
+    create_composition
+    fill_in('name', with: 'My Swaggity Swag Mix')
+    saves_composition()
+  end
+
 end

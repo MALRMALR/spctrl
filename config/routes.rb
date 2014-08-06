@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   get '/canvas', to: 'sounds#canvas'
 
   #compositions routes
-  get '/compositions/create', to: 'compositions#create'
-  get '/compositions/:id', to: 'compositions#show', as: 'compostition'
+  post '/compositions/create', to: 'compositions#create', as: 'new_composition'
+  get '/compositions/:id', to: 'compositions#show', as: 'composition'
   delete 'compositions/:id', to: 'compositions#destroy'
 
   #users routes
