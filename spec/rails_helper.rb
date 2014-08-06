@@ -44,3 +44,49 @@ RSpec.configure do |config|
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
 end
+
+
+def create_composition()
+  find('#category1').find(:xpath, 'option[4]').click
+  find('#category2').find(:xpath, 'option[3]').click
+  find('#category3').find(:xpath, 'option[1]').click
+  click_button('Create Composition')
+end
+
+def create_random_composition()
+  click_button('Random')
+end
+
+def saves_composition()
+  click_button('Save Composition')
+end
+
+def create_composition()
+  find('#category1').find(:xpath, 'option[4]').click
+  find('#category2').find(:xpath, 'option[3]').click
+  find('#category3').find(:xpath, 'option[1]').click
+  click_button('Create Composition')
+end
+
+def sign_up()
+  page.find('#sign_up').click
+  fill_in('Username', :with => 'DrRobotMck')
+  fill_in('Password', :with => 'abc')
+  fill_in('user[password_confirmation]', :with => 'abc')
+  click_button('Update')
+end
+
+def log_in(username, password)
+  page.find('#login').click
+  fill_in('Username', :with => username)
+  fill_in('Password', :with => password)
+  click_button('Log In')
+end
+
+def log_out()
+  click_link('Sign Out')
+end
+
+def delete_user()
+  click_link('DELETE ACCOUNT')
+end
