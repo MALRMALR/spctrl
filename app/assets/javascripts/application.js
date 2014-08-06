@@ -25,27 +25,43 @@ $(document).ready(function(){
 	$('#modal').on('click', '#exit', hideModal);
 	// $('#modal').on('click', '.logIn', logIn);
 
-	// Calls Click Events for Canvas Page
-	clickEvents();
+	$(document).on("page:load", function() {
 
+		//Wiring Web Audio Effects
+		var ctx = new AudioContext();
+		//player 1
+		var audioElement = $('#sliders audio')[0]
+		wireEffects(audioElement, ctx, 'delayTime', 'feedback', 'frequency', 'reverb', 'reverbGain', 'filter', 'filterGain');
 
-	//Wiring Web Audio Effects
+		//player 2
+		var audioElement2 = $('#sliders audio')[1]
+		wireEffects(audioElement2, ctx, 'delayTime2', 'feedback2', 'frequency2', 'reverb2', 'reverbGain2', 'filter2', 'filterGain2');
+
+		//player 3
+		var audioElement3 = $('#sliders audio')[2]
+		wireEffects(audioElement3, ctx, 'delayTime3', 'feedback3', 'frequency3', 'reverb3', 'reverbGain3', 'filter3', 'filterGain3');
+	});
+
+	//Wiring Web Audio Effects when no new page
 	var ctx = new AudioContext();
 	//player 1
 	var audioElement = $('#sliders audio')[0]
-	wireEffects(audioElement, ctx, 'delayTime', 'feedback', 'frequency', 'reverb', 'filter');
+	wireEffects(audioElement, ctx, 'delayTime', 'feedback', 'frequency', 'reverb', 'reverbGain', 'filter', 'filterGain');
 
 	//player 2
 	var audioElement2 = $('#sliders audio')[1]
-	wireEffects(audioElement2, ctx, 'delayTime2', 'feedback2', 'frequency2', 'reverb2', 'filter2');
+	wireEffects(audioElement2, ctx, 'delayTime2', 'feedback2', 'frequency2', 'reverb2', 'reverbGain2', 'filter2', 'filterGain2');
 
 	//player 3
 	var audioElement3 = $('#sliders audio')[2]
-	wireEffects(audioElement3, ctx, 'delayTime3', 'feedback3', 'frequency3', 'reverb3', 'filter3');
+	wireEffects(audioElement3, ctx, 'delayTime3', 'feedback3', 'frequency3', 'reverb3', 'reverbGain3', 'filter3', 'filterGain3');
 
+	// Calls Click Events for Canvas Page
+	clickEvents();
 });
 
-function wireEffects(audioElement, ctx, inputName1, inputName2, inputName3, inputName4, inputName5) {
+
+function wireEffects(audioElement, ctx, inputName1, inputName2, inputName3, inputName4, inputName5, inputName6, inputName7) {
 	audioElement.addEventListener('playing', function(){
 		var source = ctx.createMediaElementSource(audioElement);
 
@@ -63,54 +79,80 @@ function wireEffects(audioElement, ctx, inputName1, inputName2, inputName3, inpu
 		feedback.connect(filter);
 		filter.connect(delay);
 
-		//reverb
-		var verb = new SimpleReverb(ctx, {
-			seconds: 0,
-			decay: 0,
-			reverse: 0
-		});
-		verb.seconds = 0.01;
-		verb.decay = 0.01;
+		//reverb node
+    var verb = new SimpleReverb(ctx, {
+      seconds: 0,
+      decay: 0,
+      reverse: 0
+    });
+    verb.seconds = 1;
+    verb.decay = 1;
 
-		//filter
-		var biFilter = ctx.createBiquadFilter();
-		biFilter.type = biFilter.LOWPASS;
-		biFilter.frequency.value = 100;
-		biFilter.gain.value = 100;
+
+    var verbGain = ctx.createGain();
+    verbGain.gain.value = 0;
+
+    verb.connect(verbGain);
+    verbGain.connect(ctx.destination);
+
+		//filter node
+    var biFilter = ctx.createBiquadFilter();
+    biFilter.type = biFilter.LOWPASS;
+    biFilter.frequency.value = 100;
+    biFilter.gain.value = 100;
+
+    var biFilterGain = ctx.createGain();
+    biFilterGain.gain.value = 0;
+
+    biFilter.connect(biFilterGain);
+    biFilterGain.connect(ctx.destination)
 
 
 		//effect connections
-		source.connect(delay);
-		delay.connect(verb.input);
-		source.connect(biFilter);
-		source.connect(ctx.destination);
-		delay.connect(ctx.destination);
-		verb.connect(ctx.destination);
-		biFilter.connect(ctx.destination);
+    source.connect(delay);
+    delay.connect(verb.input);
+    source.connect(biFilter);
+    source.connect(ctx.destination);
+    delay.connect(ctx.destination);
+    //verb.connect(ctx.destination);
+    biFilter.connect(ctx.destination);;
 
-		var controls = $("div#sliders");
-		//delay controls
-		controls.find("input[name='"+inputName1+"']").on('input', function() {
-			delay.delayTime.value = $(this).val();
-		});
+    var controls = $("div#sliders");
+    //delay controls
+    controls.find("input[name='"+inputName1+"']").on('input', function() {
+      delay.delayTime.value = $(this).val();
+    });
 
-		controls.find("input[name='"+inputName2+"']").on('input', function() {
-			feedback.gain.value = $(this).val();
-		});
+    controls.find("input[name='"+inputName2+"']").on('input', function() {
+      feedback.gain.value = $(this).val();
+      console.log(feedback.gain.value)
+    });
 
-		controls.find("input[name='"+inputName3+"']").on('input', function() {
-			filter.frequency.value = $(this).val();
-		});
+    controls.find("input[name='"+inputName3+"']").on('input', function() {
+      filter.frequency.value = $(this).val();
+    });
 
-		//reverb control
-		controls.find("input[name='"+inputName4+"']").on('input', function() {
-			verb.seconds = parseInt($(this).val()) * 2;
-			verb.decay = $(this).val() * 0.5;
-		});
-		//biquad filter controll
-		controls.find("input[name='"+inputName5+"']").on('input', function() {
-			biFilter.frequency.value = parseInt($(this).val());
-			console.log(biFilter.frequency.value);
-		});
+    //reverb control
+    controls.find("input[name='"+inputName4+"']").on('input', function() {
+      verb.seconds = parseInt($(this).val());
+      console.log(verb.seconds);
+    });
+
+    controls.find("input[name='"+inputName5+"']").on('input', function() {
+      verbGain.gain.value = parseInt($(this).val());
+      console.log(verbGain.gain.value);
+    });
+
+
+    //biquad filter controll
+    controls.find("input[name='"+inputName6+"']").on('input', function() {
+      biFilter.frequency.value = parseInt($(this).val());
+      console.log(biFilter.frequency.value);
+    });
+
+    controls.find("input[name='"+inputName7+"']").on('input', function() {
+      biFilterGain.gain.value = parseInt($(this).val());
+      console.log(biFilterGain.gain.value);
+    });
 	});
 }
