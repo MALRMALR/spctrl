@@ -25,6 +25,7 @@ IMG.logo {
   padding-top: 40px;
   margin-left: auto;
   margin-right: auto;
+  width: 60%;
 }
 
 #category1, #category2, #category3 {
@@ -38,8 +39,7 @@ h3, h4, span, footer, p {
   letter-spacing: 15px;
   font-size: 50px;
   text-align: center;
-  color: #fff;
-  text-shadow: 2px 2px #7DB1FF;
+  color: #FFF;
 }
 
 span {
@@ -61,13 +61,33 @@ p {
   letter-spacing: 0.25em;
 }
 
+.form_label {
+  padding: 5px;
+}
+
+.field {
+  padding: 20px;
+}
+
+.btn {
+  border: 3px solid #FFF;
+  background: rgba(0,0,0,0);
+  letter-spacing: 1px;
+  border-radius: 2px;
+  color: #FFF;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 a {
   text-decoration: none;
   display: inline;
 }
 
 a:visited {
-  color: #fff;
+  color: #FFF;
 }
 
 a:hover {
@@ -81,7 +101,7 @@ a:hover {
 
 canvas#myCanvas {
   display: inline;
-  border: 2px double #fff;
+  border: 2px double #FFF;
   background: -webkit-linear-gradient(left, rgba(130, 78, 99, 0.97), rgba(51, 62, 97, 0.97)); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(right, rgba(130, 78, 99, 0.97), rgba(51, 62, 97, 0.97)); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(right, rgba(130, 78, 99, 0.97), rgba(51, 62, 97, 0.97)); /* For Firefox 3.6 to 15 */
@@ -99,19 +119,22 @@ canvas#myCanvas:hover {
 
 #modal {
   position: absolute;
-  z-index: 1000;
-  background: rgba(0,0,0,.8);
+  z-index: 10;
+  background: rgba(0,0,0,0.6);
   width: 400px;
-  display:none;
+  display: none;
   color: whitesmoke;
   top: 20%;
   left: 30%;
+  padding-bottom: 50px;
 }
 
 #exit {
   float: right;
   padding-top: 15px;
 }
+
+#login:hover, #sign_up:hover {color: #7DFDFF}
 
 #signup-form {
   display: none;
@@ -128,4 +151,8 @@ canvas#myCanvas:hover {
 .user_signup {
   text-align: center;
 /*   display: block; */
+}
+
+#password {
+  margin-bottom: 20px;
 }

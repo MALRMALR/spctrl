@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <img class="logo" src="http://i.imgur.com/olTjcfC.png">
+  <img class="logo" src="http://i.imgur.com/0rPQKnU.png">
 
   <div id="main_menu">
     <span><%= link_to('home', root_path)%></span><span>//</span><span><%= link_to('Canvas', canvas_path)%></span>
@@ -26,8 +26,19 @@
       <% end %>
     </span>
   </div>
+
+  <div id="signup-form">
+    <%= render partial: 'users/form', locals: {user: @user} %>
+  </div>
+
+  <div id="register-form">
+    <%= render partial: 'sessions/form' %>
+  </div>
+
     <%= yield %>
     <div id="sound_wrapper"></div>
+
+
 
 </body>
 <!-- <footer>

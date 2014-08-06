@@ -16,9 +16,9 @@ class SoundsController < ApplicationController
 
   def filter
     @user = User.new
-    @sound1 = Sound.where('category LIKE ?', "%#{params[:category1]}%").sample(1)
-    @sound2 = Sound.where('category LIKE ?', "%#{params[:category2]}%").sample(1)
-    @sound3 = Sound.where('category LIKE ?', "%#{params[:category3]}%").sample(1)
+    @sound1 = Sound.where(category: params[:category1]).sample(1)
+    @sound2 = Sound.where(category: params[:category2]).sample(1)
+    @sound3 = Sound.where(category: params[:category3]).sample(1)
     # Sound.where(category: params[:category1])
     # @sounds = Sound.filter_sounds(params)
   end
@@ -29,6 +29,7 @@ class SoundsController < ApplicationController
   # end
 
   def canvas
+    @user = User.new
     @sound = Sound.pluck(:url).sample(1)
   end
 

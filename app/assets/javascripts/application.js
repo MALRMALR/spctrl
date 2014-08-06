@@ -23,7 +23,6 @@ $(document).ready(function(){
 	$('body').on('click', '#login', showLogIn);
 	$('body').on('click', '#sign_up', showSignUp);
 	$('#modal').on('click', '#exit', hideModal);
-	// $('#modal').on('click', '.logIn', logIn);
 
 	$(document).on("page:load", function() {
 

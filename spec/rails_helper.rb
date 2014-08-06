@@ -20,6 +20,9 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
+# Load seed script to prepare test database
+Rails.application.load_seed
+
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
@@ -27,7 +30,7 @@ RSpec.configure do |config|
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
-  config.use_transactional_fixtures = true
+  config.use_transactional_fixtures = false
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
@@ -45,42 +48,22 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 end
 
-
-def create_composition()
-  find('#category1').find(:xpath, 'option[4]').click
-  find('#category2').find(:xpath, 'option[3]').click
-  find('#category3').find(:xpath, 'option[1]').click
-  click_button('Create Composition')
-end
-
-def create_random_composition()
-  click_button('Random')
-end
-
-def saves_composition()
-  click_button('Save Composition')
-end
-
-def show_composition()
-  find('#category1').find(:xpath, 'option[4]').click
-  find('#category2').find(:xpath, 'option[3]').click
-  find('#category3').find(:xpath, 'option[1]').click
-  click_button('Create Composition')
-end
-
 def sign_up()
+  visit(root_path)
   page.find('#sign_up').click
   fill_in('Username', :with => 'DrRobotMck')
   fill_in('Password', :with => 'abc')
   fill_in('user[password_confirmation]', :with => 'abc')
-  click_button('Update')
+  click_button('SIGN UP')
 end
 
 def log_in(username, password)
+  User.create(username: username, password: password )
+  visit(root_path)
   page.find('#login').click
   fill_in('Username', :with => username)
   fill_in('Password', :with => password)
-  click_button('Log In')
+  click_button('LOG IN')
 end
 
 def log_out()
@@ -89,4 +72,30 @@ end
 
 def delete_user()
   click_link('DELETE ACCOUNT')
+end
+
+def create_composition()
+  visit(root_path)
+  find('#category1').find(:xpath, 'option[4]').click
+  find('#category2').find(:xpath, 'option[3]').click
+  find('#category3').find(:xpath, 'option[1]').click
+  click_button('Create Composition')
+end
+
+def create_random_composition()
+  visit(root_path)
+  click_button('Random')
+end
+
+def show_composition()
+  visit(root_path)
+  find('#category1').find(:xpath, 'option[4]').click
+  find('#category2').find(:xpath, 'option[3]').click
+  find('#category3').find(:xpath, 'option[1]').click
+  click_button('Create Composition')
+end
+
+def view_canvas()
+  visit(root_path)
+  click_link('Canvas')
 end
