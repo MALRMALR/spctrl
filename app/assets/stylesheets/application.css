@@ -22,7 +22,7 @@ body {
 
 IMG.logo {
   display: block;
-  padding-top: 80px;
+  padding-top: 40px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -99,13 +99,13 @@ canvas#myCanvas:hover {
 
 #modal {
   position: absolute;
-  z-index: 10;
+  z-index: 1000;
   background: rgba(0,0,0,.8);
   width: 400px;
   display:none;
   color: whitesmoke;
-  top:20%;
-  left:30%;
+  top: 20%;
+  left: 30%;
 }
 
 #exit {
