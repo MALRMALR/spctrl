@@ -2,9 +2,9 @@ require 'rails_helper'
 
 describe "Compositions", js: true do
 
-  it "creates a new composition with categories melodic, happy, and study" do
+  it "shows a new composition with categories melodic, happy, and study" do
     visit(root_path)
-    create_composition
+    show_composition
   end
 
   it "edits the composition" do

@@ -2,10 +2,9 @@ require 'rails_helper'
 
 describe "Users", js: true do
 
-  # WUS DIS FO
   before(:all) do
     User.destroy_all
-    @test_user = User.create!(username: "a-Breezy", password: "abc")
+    @test_user = User.create!(username: "DrRobotMck", password: "abc")
   end
 
   it "signs up if no user is logged in" do
@@ -28,7 +27,7 @@ describe "Users", js: true do
   it "deletes" do
     visit(root_path)
     log_in(@test_user.username, 'abc')
-    click_link('a-Breezy')
+    click_link('DrRobotMck')
     delete_user()
   end
 
