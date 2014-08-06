@@ -1,5 +1,3 @@
-
-
 function showSignUp() {
   var signUpForm = $('#signup-form');
   signUpForm.remove();
