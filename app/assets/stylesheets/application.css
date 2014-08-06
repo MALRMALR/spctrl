@@ -25,6 +25,7 @@ IMG.logo {
   padding-top: 40px;
   margin-left: auto;
   margin-right: auto;
+  width: 60%;
 }
 
 #category1, #category2, #category3 {
@@ -61,16 +62,16 @@ p {
 }
 
 .form_label {
-  padding: 10px;
+  padding: 5px;
 }
 
 .field {
-  padding: 10px;
+  padding: 20px;
 }
 
 .btn {
   border: 3px solid #FFF;
-  background: #000;
+  background: rgba(0,0,0,0);
   letter-spacing: 1px;
   border-radius: 2px;
   color: #FFF;
@@ -119,18 +120,21 @@ canvas#myCanvas:hover {
 #modal {
   position: absolute;
   z-index: 10;
-  background: rgba(0,0,0,.8);
+  background: rgba(0,0,0,0.6);
   width: 400px;
-  display:none;
+  display: none;
   color: whitesmoke;
   top: 20%;
   left: 30%;
+  padding-bottom: 50px;
 }
 
 #exit {
   float: right;
   padding-top: 15px;
 }
+
+#login:hover, #sign_up:hover {color: #7DFDFF}
 
 #signup-form {
   display: none;
@@ -147,4 +151,8 @@ canvas#myCanvas:hover {
 .user_signup {
   text-align: center;
 /*   display: block; */
+}
+
+#password {
+  margin-bottom: 20px;
 }
