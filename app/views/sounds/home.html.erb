@@ -1,4 +1,4 @@
-<%= form_tag('/filter', method: :get) do %>
+<%= form_tag('/filter', method: :get, id: "result") do %>
   <%= select_tag(:category1, options_for_select([[ "natural", "natural" ],
                                                    ["city", "city"],
                                                    ["noise", "noise"],
@@ -11,8 +11,8 @@
   <%= select_tag(:category3, options_for_select([[ "sleep", "sleep" ],
                                                    ["study", "study"],
                                                    ["walk", "walk"]])) %>
-  <%= submit_tag "Create Composition" %>
+  <%= submit_tag "Create Composition", class: "btn" %>
 <% end %>
 <%= form_tag('/random', method: :get) do %>
-<% button_tag "Random" %>
+<% button_tag "Random", class: "btn" %>
 <% end %>
