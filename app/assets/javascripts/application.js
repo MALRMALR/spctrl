@@ -15,15 +15,23 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require backstretch
 //= require_tree .
 
-$(document).ready(function(){
+function domReady(){
+	modalReady();
+
 	console.log("Loaded, bro");
 	var body = $("body");
 	$('body').on('click', '#login', showLogIn);
 	$('body').on('click', '#sign_up', showSignUp);
 	$('#modal').on('click', '#exit', hideModal);
-	// $('#modal').on('click', '.logIn', logIn);
+
+	$.backstretch([
+	    "http://i.imgur.com/NSxwAIe.jpg"
+	  , "http://i.imgur.com/DmGcSvO.jpg"
+	  , "http://i.imgur.com/pjwsIMe.jpg"
+	], {duration: 8000, fade: 750});
 
 	// shows mouse coordinates on canvas page
 	showCoordinates();
@@ -31,7 +39,6 @@ $(document).ready(function(){
 	// Calls Click Events for CANVAS.JS
 	var canvas = $('#myCanvas');
 	$(canvas).on('mousedown', clickEvents);
-
 
 	//Wiring Web Audio Effects
 	var ctx = new AudioContext();
@@ -47,7 +54,7 @@ $(document).ready(function(){
 	var audioElement3 = $('#sliders audio')[2]
 	wireEffects(audioElement3, ctx, 'delayTime3', 'feedback3', 'frequency3', 'reverb3', 'filter3');
 
-});
+}
 
 /////////////////////////////////////////
 /////// HOME PAGE SIGNAL CHAIN //////////
@@ -137,7 +144,7 @@ function clickEvents() {
 	vco.type = vco.SINE;                   // OSC generates SINE WAVE
 	vco.frequency.value = this.frequency;
 	vco.start(0);
-	
+
 
 	// GAIN
 	var vca = context.createGain();
@@ -207,27 +214,6 @@ function clickEvents() {
 };
 
 
-// function adjustCanvasEffects() {
-// 	var canvas = $('#myCanvas');
-// 	var canvasControls = $('#canvas-controls')
-// 	$(canvas).on("mousemove", function( event ) {
-// 	canvasControls.find("input[name='frequency']").attr('value', event.pageX);
-// 	canvasControls.find("input[name='convolver']").attr('value', event.pageY);
-//
-//
-//
-//
-// // $(canvasControls).find("input[name='frequency']").on('input', function() {
-// // 		filter.frequency.value = event.pageX * 2;
-// // 		console.log(filter.frequency.value)
-// // 	})
-// // $(canvasControls).find("input[name='reverb']").on('input', function() {
-// // 		reverb.value = event.pageY * 2;
-// // 		console.log(filter.frequency.value)
-// // 	})
-// })
-// }
-
 
 function showCoordinates() {
 	var body = $('body');
@@ -238,3 +224,7 @@ function showCoordinates() {
 			$(heading).text("Position X: " + event.pageX + ", Position Y: "+ event.pageY);
 		});
 }
+
+$(document).ready(domReady);
+// page load via turbolinks
+$(document).on('page:load', domReady);

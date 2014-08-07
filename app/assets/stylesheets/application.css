@@ -15,22 +15,30 @@
  */
 
 body {
-  background-image: url('http://i.imgur.com/7IM6va5.jpg');
-  background-size: fill;
-  background-repeat: no-repeat;
+  background: #000;
 }
 
 img.logo {
   display: block;
   padding-top: 0;
+  padding-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
+  width: 840px;
 }
 
-#category1, #category2, #category3 {
-  border: 5px solid whitesmoke;
+ #category1, #category2, #category3 {
+  border: 12px solid transparent;
+  background: rgba(0,0,0,0.8);
+  color: #FFF;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  margin: 30px 10px 50px 10px;
+  cursor: pointer;
+
 }
 
+#random-form {width: 86px;margin: 0 auto;}
 
 h3, h4, span, footer, p {
   font-family: "Trebuchet MS";
@@ -38,8 +46,7 @@ h3, h4, span, footer, p {
   letter-spacing: 15px;
   font-size: 50px;
   text-align: center;
-  color: #fff;
-  text-shadow: 2px 2px #7DB1FF;
+  color: #FFF;
 }
 
 span {
@@ -61,17 +68,43 @@ p {
   letter-spacing: 0.25em;
 }
 
+.form_label {
+  padding: 5px;
+}
+
+.field {
+  padding: 20px;
+}
+
+.btn {
+  border: 3px solid #FFF;
+  background: rgba(0,0,0,0);
+  letter-spacing: 1px;
+  border-radius: 2px;
+  color: #FFF;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
 a {
   text-decoration: none;
   display: inline;
+  color: #FFF;
+  text-shadow: 1px 1px #6C7A89;
 }
 
 a:visited {
-  color: #fff;
+  color: #FFF;
 }
 
 a:hover {
   color: #7DFDFF;
+  cursor: pointer;
 }
 
 #canvas_container, #main_menu {
@@ -81,7 +114,9 @@ a:hover {
 
 canvas#myCanvas {
   display: inline;
-  border: 2px double #fff;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  border: 2px double #FFF;
   background: -webkit-linear-gradient(left, rgba(130, 78, 99, 0.97), rgba(51, 62, 97, 0.97)); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(right, rgba(130, 78, 99, 0.97), rgba(51, 62, 97, 0.97)); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(right, rgba(130, 78, 99, 0.97), rgba(51, 62, 97, 0.97)); /* For Firefox 3.6 to 15 */
@@ -93,24 +128,36 @@ canvas#myCanvas:hover {
 }
 
 #main_menu {
-  padding: 30px 0;
+  padding: 50px 0;
   text-transform: uppercase;
 }
 
+#main_menu span:first-child {margin-left: 32px;}
+
 #modal {
-  position: absolute;
-  z-index: 1000;
-  background: rgba(0,0,0,.8);
+  position: fixed;
+  z-index: 10;
+  background: rgba(0,0,0,0.6);
   width: 400px;
-  display:none;
+  display: none;
   color: whitesmoke;
   top: 20%;
-  left: 30%;
+  left: 40%;
+  padding-bottom: 50px;
 }
 
 #exit {
   float: right;
   padding-top: 15px;
+}
+
+#login:hover, #sign_up:hover {
+  color: #7DFDFF;
+  cursor: pointer
+  }
+
+#login, #sign_up {
+  text-shadow: 1px 1px #6C7A89;
 }
 
 #signup-form {
@@ -130,7 +177,34 @@ canvas#myCanvas:hover {
 /*   display: block; */
 }
 
+<<<<<<< HEAD
 .coordinates {
   text-align: center;
   color: whitesmoke;
+=======
+#password {
+  margin-bottom: 20px;
+}
+
+#result {
+  text-align: center;
+}
+
+.demo#sliders {
+  text-align: center;
+  padding-top: 40px;
+}
+
+.controls {
+  font-family: gill sans;
+  display: block;
+  color: #FFF;
+  text-shadow: 1px 1px #6C7A89;
+  margin-bottom: 20px;
+}
+
+#username, #password, #user_username, #user_password, #user_password_confirmation {
+  width: 180px;
+  padding: 3px;
+>>>>>>> 876054c2f3c49765997d2c10171535b8a3734c30
 }

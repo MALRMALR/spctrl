@@ -1,3 +1,5 @@
+Sound.destroy_all
+
 Sound.create(category: 'city', url: 'https://s3.amazonaws.com/spctrl/100263__sagetyrtle__062510-park.mp3')
 Sound.create(category: 'noise', url: 'https://s3.amazonaws.com/spctrl/117555__kougloff__moteur.mp3')
 Sound.create(category: 'noise', url: 'https://s3.amazonaws.com/spctrl/117782__burning-mir__ambient-sounds-14+1.mp3')
