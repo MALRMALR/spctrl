@@ -1,5 +1,6 @@
 
 <div class="demo" id="sliders">
+
   <audio autoplay controls="true" loop="true" src="<%= @sound1[0].url %>" class="mutetabId_2442606">
       Your browser doesn't support the audio element.
   </audio>
@@ -11,6 +12,8 @@
     Reverb: <input max="3" min="0" name="reverb" step=".05" type="range" value="0">
     LowPass Filter: <input max="22050" min="0" name="filter" step="200" type="range" value="6400">
   </div>
+  <br>
+
 
   <audio autoplay controls="true" loop="true" src="<%= @sound2[0].url %>" class="mutetabId_2442606">
     Your browser doesn't support the audio element.
@@ -23,6 +26,8 @@
     Reverb: <input max="3" min="0" name="reverb2" step=".05" type="range" value="0">
     LowPass Filter: <input max="22050" min="0" name="filter2" step="200" type="range" value="6400">
   </div>
+  <br>
+
 
   <audio autoplay controls="true" loop="true" src="<%= @sound3[0].url %>" class="mutetabId_2442606">
     Your browser doesn't support the audio element.
@@ -35,6 +40,7 @@
     Reverb: <input max="3" min="0" name="reverb3" step=".05" type="range" value="0">
     LowPass Filter: <input max="22050" min="0" name="filter3" step="200" type="range" value="6400">
   </div>
+  <br>
 </div>
 
 <% if session[:current_user] %>

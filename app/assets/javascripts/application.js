@@ -15,9 +15,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require backstretch
 //= require_tree .
 
-$(document).ready(function(){
+function domReady(){
+	modalReady();
+
 	console.log("Loaded, bro");
 
 	$('body').on('click', '#login', showLogIn);
@@ -33,7 +36,6 @@ $(document).ready(function(){
 	// Calls Click Events for Canvas Page
 	clickEvents();
 
-
 	//Wiring Web Audio Effects
 	var ctx = new AudioContext();
 	//player 1
@@ -48,7 +50,7 @@ $(document).ready(function(){
 	var audioElement3 = $('#sliders audio')[2]
 	wireEffects(audioElement3, ctx, 'delayTime3', 'feedback3', 'frequency3', 'reverb3', 'filter3');
 
-});
+}
 
 function wireEffects(audioElement, ctx, inputName1, inputName2, inputName3, inputName4, inputName5) {
 	audioElement.addEventListener('playing', function(){
@@ -119,3 +121,7 @@ function wireEffects(audioElement, ctx, inputName1, inputName2, inputName3, inpu
 		});
 	});
 }
+
+$(document).ready(domReady);
+// page load via turbolinks
+$(document).on('page:load', domReady);

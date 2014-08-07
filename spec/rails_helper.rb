@@ -54,7 +54,7 @@ def sign_up()
   fill_in('Username', :with => 'DrRobotMck')
   fill_in('Password', :with => 'abc')
   fill_in('user[password_confirmation]', :with => 'abc')
-  click_button('Update')
+  click_button('SIGN UP')
 end
 
 def log_in(username, password)
@@ -63,7 +63,7 @@ def log_in(username, password)
   page.find('#login').click
   fill_in('Username', :with => username)
   fill_in('Password', :with => password)
-  click_button('Log In')
+  click_button('LOG IN')
 end
 
 def log_out()

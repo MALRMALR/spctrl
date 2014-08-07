@@ -20,6 +20,7 @@ The user stories can be found [here](https://trello.com/b/bh3EHkbN/team-philosor
 * Bcrypt gem
 * Pry-rails for debugging
 * RSpec and Capybara for testing
+<<<<<<< HEAD
 
 WHY WE MADE IT
 HOW YOU CAN USE IT
