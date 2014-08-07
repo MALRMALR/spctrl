@@ -5,3 +5,5 @@
 // add wavesurfer.js
 
 // mapping mouse move to synth effects
+
+//this is a test bruh
