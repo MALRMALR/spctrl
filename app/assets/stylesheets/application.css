@@ -226,17 +226,47 @@ canvas {
 .demo#sliders {
   text-align: center;
   padding-top: 40px;
+  padding-left: 100px;
 }
 
 .controls {
   font-family: gill sans;
   display: block;
   color: #FFF;
-  text-shadow: 1px 1px #6C7A89;
   margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: lighter;
+  border: 1px solid black;
+  margin: auto;
 }
 
 #username, #password, #user_username, #user_password, #user_password_confirmation {
   width: 180px;
   padding: 3px;
+}
+
+button {
+  border: 3px solid #FFF;
+  background: rgba(0,0,0,0);
+  letter-spacing: 1px;
+  border-radius: 2px;
+  color: #FFF;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.soundBox {
+  float: left;
+  width: 300px;
+  margin: 20px;
+  background: rgba(0,0,0,0.6);
+}
+
+input#name {
+  margin-left: 19px;
 }

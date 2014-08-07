@@ -1,54 +1,37 @@
 <div class="demo" id="sliders">
-
-  <audio autoplay controls="true" loop="true" src="<%= @sound1[0].url %>" class="mutetabId_2442606">
-      Your browser doesn't support the audio element.
-  </audio>
-
-    <div class="controls">
-      delayTime: <input max="1" min="0" name="delayTime" step="0.05" type="range" value="0">
-      feedback: <input max="0.95" min="0" name="feedback" step="0.05" type="range" value="0">
-      cutoff freq: <input max="4000" min="0" name="frequency" step="100" type="range" value="1000">
-      Reverb: <input max="3" min="1" name="reverb" step=".05" type="range" value="0">
-      Reverb Volume: <input max="6" min="0" name="reverbGain" step=".05" type="range" value="0">
-      LowPass Filter: <input max="22050" min="1000" name="filter" step="200" type="range" value="6400">
-      LowPass Filter Volume: <input max="5" min="0" name="filterGain" step=".05" type="range" value="0">
-    </div>
-
-  <audio autoplay controls="true" loop="true" src="<%= @sound2[0].url %>" class="mutetabId_2442606">
-    Your browser doesn't support the audio element.
-  </audio>
-
-    <div class="controls">
-      delayTime: <input max="1" min="0" name="delayTime2" step="0.05" type="range" value="0">
-      feedback: <input max="0.95" min="0" name="feedback2" step="0.05" type="range" value="0">
-      cutoff freq: <input max="4000" min="0" name="frequency2" step="100" type="range" value="1000">
-      Reverb: <input max="3" min="1" name="reverb2" step=".05" type="range" value="0">
-      Reverb Volume: <input max="6" min="0" name="reverbGain2" step=".05" type="range" value="0">
-      LowPass Filter: <input max="22050" min="1000" name="filter2" step="200" type="range" value="6400">
-      LowPass Filter Volume: <input max="5" min="0" name="filterGain2" step=".05" type="range" value="0">
-    </div>
-
-  <audio autoplay controls="true" loop="true" src="<%= @sound3[0].url %>" class="mutetabId_2442606">
-    Your browser doesn't support the audio element.
-  </audio>
-    
-    <div class="controls">
-      delayTime: <input max="1" min="0" name="delayTime3" step="0.05" type="range" value="0">
-      feedback: <input max="0.95" min="0" name="feedback3" step="0.05" type="range" value="0">
-      cutoff freq: <input max="4000" min="0" name="frequency3" step="100" type="range" value="1000">
-      Reverb: <input max="3" min="1" name="reverb3" step=".05" type="range" value="0">
-      Reverb Volume: <input max="6" min="0" name="reverbGain3" step=".05" type="range" value="0">
-      LowPass Filter: <input max="22050" min="1000" name="filter3" step="200" type="range" value="6400">
-      LowPass Filter Volume: <input max="5" min="0" name="filterGain3" step=".05" type="range" value="0">
-    </div>
+    <%= render partial: 'sound', locals: {sound: @sound1[0],
+                                          delayTime: 'delayTime',
+                                          feedback: 'feedback',
+                                          frequency: 'frequency',
+                                          reverb: 'reverb',
+                                          reverbGain: 'reverbGain',
+                                          filter: 'filter',
+                                          filterGain: 'filterGain'} %>
+    <%= render partial: 'sound', locals: {sound: @sound2[0],
+                                          delayTime: 'delayTime2',
+                                          feedback: 'feedback2',
+                                          frequency: 'frequency2',
+                                          reverb: 'reverb2',
+                                          reverbGain: 'reverbGain2',
+                                          filter: 'filter2',
+                                          filterGain: 'filterGain2'} %>
+    <%= render partial: 'sound', locals: {sound: @sound3[0],
+                                          delayTime: 'delayTime3',
+                                          feedback: 'feedback3',
+                                          frequency: 'frequency3',
+                                          reverb: 'reverb3',
+                                          reverbGain: 'reverbGain3',
+                                          filter: 'filter3',
+                                          filterGain: 'filterGain3'} %>
 </div>
 
+
 <% if session[:current_user] %>
-  <%= form_tag '/compositions/create', method: 'post' do %>
+<%= form_tag '/compositions/create', method: 'post', :id => 'random-form' do %>
     <%= hidden_field_tag(:sound_id1, @sound1[0].id) %>
     <%= hidden_field_tag(:sound_id2, @sound2[0].id) %>
     <%= hidden_field_tag(:sound_id3, @sound3[0].id) %>
-    <%= text_field_tag(:name)%>
-    <%= submit_tag("Save Composition") %>
+    <%= text_field_tag(:name, 'Title') %>
+    <%= submit_tag "Save Composition", :class=> 'btn' %>
   <% end %>
 <% end %>
