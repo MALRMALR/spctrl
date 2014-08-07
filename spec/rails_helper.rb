@@ -71,7 +71,10 @@ def log_out
 end
 
 def delete_user
+  visit(root_path)
+  click_link(@test_user.username)
   click_link('DELETE ACCOUNT')
+  page.driver.browser.switch_to.alert.accept
 end
 
 def choose_composition
@@ -100,6 +103,11 @@ def show_composition
   find('#category2').find(:xpath, 'option[3]').click
   find('#category3').find(:xpath, 'option[1]').click
   click_button('Create Composition')
+end
+
+def save_composition
+  fill_in('name', with: 'My Swaggity Swag Mix')
+  click_button('Save Composition')
 end
 
 def view_canvas
