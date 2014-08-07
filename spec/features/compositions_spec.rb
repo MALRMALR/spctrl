@@ -9,25 +9,24 @@ describe "Compositions", js: true do
 
   it "edits the composition" do
     create_and_show_composition
-    expect(page).to have_content('delayTime')
-    expect(page).to have_content('feedback')
-    expect(page).to have_content('cutoff freq')
-    expect(page).to have_content('Reverb')
+    expect(page).to have_content('DELAYTIME')
+    expect(page).to have_content('FEEDBACK')
+    expect(page).to have_content('CUTOFF FREQ')
+    expect(page).to have_content('REVERB')
   end
 
   it "creates a random composition" do
     create_random_composition
-    expect(page).to have_content('delayTime')
-    expect(page).to have_content('feedback')
-    expect(page).to have_content('cutoff freq')
-    expect(page).to have_content('Reverb')
+    expect(page).to have_content('DELAYTIME')
+    expect(page).to have_content('FEEDBACK')
+    expect(page).to have_content('CUTOFF FREQ')
+    expect(page).to have_content('REVERB')
   end
 
   it "saves a composition" do
     log_in('DrRobotMck', 'abc')
     create_and_show_composition
-    fill_in('name', :with => 'My Swaggity Swag Mix')
-    click_button('Save Composition')
+    save_composition
     expect(page).to have_content('Saved Compositions')
   end
 
