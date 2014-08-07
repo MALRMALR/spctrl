@@ -27,7 +27,7 @@ img.logo {
   width: 840px;
 }
 
- #category1, #category2, #category3 {
+#category1, #category2, #category3 {
   border: 12px solid transparent;
   background: rgba(0,0,0,0.8);
   color: #FFF;
@@ -112,19 +112,57 @@ a:hover {
   text-align: center;
 }
 
-canvas#myCanvas {
-  display: inline;
-  margin-top: 30px;
-  margin-bottom: 50px;
-  border: 2px double #FFF;
-  background: -webkit-linear-gradient(left, rgba(130, 78, 99, 0.97), rgba(51, 62, 97, 0.97)); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, rgba(130, 78, 99, 0.97), rgba(51, 62, 97, 0.97)); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, rgba(130, 78, 99, 0.97), rgba(51, 62, 97, 0.97)); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right , rgba(130, 78, 99, 0.97), rgba(51, 62, 97, 0.97)); /* Standard syntax */
+#canvas_container {
+  position: absolute;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-canvas#myCanvas:hover {
+#canvas_inner_container {
+  position: relative;
+  display: inline-block;
+}
+canvas {
+  width: 100px;
+  height: 100px;
+}
+
+#myCanvas, #myCanvas1, #myCanvas2, #myCanvas3, #myCanvas4, #myCanvas5, #myCanvas6, #myCanvas7,
+#myCanvas8, #myCanvas9, #myCanvas10, #myCanvas11, #myCanvas12, #myCanvas13, #myCanvas14,
+#myCanvas15, #myCanvas16, #myCanvas17, #myCanvas18, #myCanvas19, #myCanvas20, #myCanvas21, #myCanvas22, #myCanvas23 {
+  border: 2px double whitesmoke;
   cursor: crosshair;
+  margin: 0 auto;
+}
+
+#myCanvas:hover, #myCanvas1:hover, #myCanvas2:hover, #myCanvas3:hover,
+#myCanvas4:hover, #myCanvas5:hover, #myCanvas6:hover, #myCanvas7:hover,
+#myCanvas8:hover, #myCanvas9:hover, #myCanvas10:hover, #myCanvas11:hover,
+#myCanvas12:hover, #myCanvas13:hover, #myCanvas14:hover, #myCanvas15:hover,
+#myCanvas16:hover, #myCanvas17:hover, #myCanvas18:hover, #myCanvas19:hover,
+#myCanvas20:hover, #myCanvas21:hover, #myCanvas22:hover, #myCanvas23:hover {
+  cursor: crosshair;
+  border: 2px double rgba(29, 244, 255, 1);
+}
+
+#major, #minor {
+  width: 460px;
+  float: left;
+  padding: 0 0 30px 0;
+}
+
+#majorheading, #minorheading {
+  font-family: 'Gill Sans';
+  text-transform: uppercase;
+  font-weight: lighter;
+  letter-spacing: 1em;
+  color: whitesmoke;
+  opacity: 0.5;
+  padding: 20px 0 30px 0;
 }
 
 #main_menu {

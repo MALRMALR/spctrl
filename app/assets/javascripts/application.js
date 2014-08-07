@@ -26,6 +26,30 @@ function domReady(){
 	$('body').on('click', '#login', showLogIn);
 	$('body').on('click', '#sign_up', showSignUp);
 	$('#modal').on('click', '#exit', hideModal);
+	$('#myCanvas').mousedown(aMajor);
+  $('#myCanvas1').mousedown(aSharpMajor);
+  $('#myCanvas2').mousedown(bMajor);
+  $('#myCanvas3').mousedown(cMajor);
+  $('#myCanvas4').mousedown(cSharpMajor);
+  $('#myCanvas5').mousedown(dMajor);
+  $('#myCanvas6').mousedown(dSharpMajor);
+  $('#myCanvas7').mousedown(eMajor);
+  $('#myCanvas8').mousedown(fMajor);
+  $('#myCanvas9').mousedown(fSharpMajor);
+  $('#myCanvas10').mousedown(gMajor);
+  $('#myCanvas11').mousedown(gSharpMajor);
+  $('#myCanvas12').mousedown(aMinor);
+  $('#myCanvas13').mousedown(aSharpMinor);
+  $('#myCanvas14').mousedown(bMinor);
+  $('#myCanvas15').mousedown(cMinor);
+  $('#myCanvas16').mousedown(cSharpMinor);
+  $('#myCanvas17').mousedown(dMinor);
+  $('#myCanvas18').mousedown(dSharpMinor);
+  $('#myCanvas19').mousedown(eMinor);
+  $('#myCanvas20').mousedown(fMinor);
+  $('#myCanvas21').mousedown(fSharpMinor);
+  $('#myCanvas22').mousedown(gMinor);
+  $('#myCanvas23').mousedown(gSharpMinor);
 
 		$(document).on("page:load", function() {
 			//Wiring Web Audio Effects
