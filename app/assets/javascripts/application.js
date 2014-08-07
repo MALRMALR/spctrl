@@ -15,30 +15,39 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require backstretch
 //= require_tree .
 
-$(document).ready(function(){
-	console.log("Loaded, bro");
+function domReady(){
+	modalReady();
 
+	console.log("Loaded, bro");
+	var body = $("body");
 	$('body').on('click', '#login', showLogIn);
 	$('body').on('click', '#sign_up', showSignUp);
 	$('#modal').on('click', '#exit', hideModal);
 
-	$(document).on("page:load", function() {
-		//Wiring Web Audio Effects
-		var ctx = new AudioContext();
-		//player 1
-		var audioElement = $('#sliders audio')[0]
-		wireEffects(audioElement, ctx, 'delayTime', 'feedback', 'frequency', 'reverb', 'reverbGain', 'filter', 'filterGain');
+		$(document).on("page:load", function() {
+			//Wiring Web Audio Effects
+			var ctx = new AudioContext();
+			//player 1
+			var audioElement = $('#sliders audio')[0]
+			wireEffects(audioElement, ctx, 'delayTime', 'feedback', 'frequency', 'reverb', 'reverbGain', 'filter', 'filterGain');
 
-		//player 2
-		var audioElement2 = $('#sliders audio')[1]
-		wireEffects(audioElement2, ctx, 'delayTime2', 'feedback2', 'frequency2', 'reverb2', 'reverbGain2', 'filter2', 'filterGain2');
+			//player 2
+			var audioElement2 = $('#sliders audio')[1]
+			wireEffects(audioElement2, ctx, 'delayTime2', 'feedback2', 'frequency2', 'reverb2', 'reverbGain2', 'filter2', 'filterGain2');
 
-		//player 3
-		var audioElement3 = $('#sliders audio')[2]
-		wireEffects(audioElement3, ctx, 'delayTime3', 'feedback3', 'frequency3', 'reverb3', 'reverbGain3', 'filter3', 'filterGain3');
-	});
+			//player 3
+			var audioElement3 = $('#sliders audio')[2]
+			wireEffects(audioElement3, ctx, 'delayTime3', 'feedback3', 'frequency3', 'reverb3', 'reverbGain3', 'filter3', 'filterGain3');
+		});
+
+	$.backstretch([
+	    "http://i.imgur.com/NSxwAIe.jpg"
+	  , "http://i.imgur.com/DmGcSvO.jpg"
+	  , "http://i.imgur.com/pjwsIMe.jpg"
+	], {duration: 8000, fade: 750});
 
 	//Wiring Web Audio Effects when no new page
 	var ctx = new AudioContext();
@@ -56,8 +65,12 @@ $(document).ready(function(){
 
 	// Calls Click Events for Canvas Page
 	clickEvents();
-});
 
+}
+
+/////////////////////////////////////////
+/////// HOME PAGE SIGNAL CHAIN //////////
+/////////////////////////////////////////
 
 function wireEffects(audioElement, ctx, inputName1, inputName2, inputName3, inputName4, inputName5, inputName6, inputName7) {
 	audioElement.addEventListener('playing', function(){
@@ -152,5 +165,14 @@ function wireEffects(audioElement, ctx, inputName1, inputName2, inputName3, inpu
       biFilterGain.gain.value = parseInt($(this).val());
       console.log(biFilterGain.gain.value);
     });
+
 	});
 }
+
+//////////////////////////////////////
+/////// CANVAS SIGNAL CHAIN //////////
+//////////////////////////////////////
+
+$(document).ready(domReady);
+// page load via turbolinks
+$(document).on('page:load', domReady);
