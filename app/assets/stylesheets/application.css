@@ -47,6 +47,11 @@ img.logo {
 
 #result {text-align: center;}
 
+#random-form {
+  width: 86px;
+  margin: 0 auto;
+}
+
 #title-form {
   width: 300px;
   margin: 0 auto;
