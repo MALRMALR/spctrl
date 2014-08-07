@@ -128,6 +128,7 @@ a:hover {
   display: inline-block;
   background: #000;
   opacity: 0.5;
+  margin: 0 4px;
 }
 canvas {
   width: 100px;
@@ -149,7 +150,7 @@ canvas {
 #myCanvas16:hover, #myCanvas17:hover, #myCanvas18:hover, #myCanvas19:hover,
 #myCanvas20:hover, #myCanvas21:hover, #myCanvas22:hover, #myCanvas23:hover {
   cursor: crosshair;
-  border: 5px double rgba(29, 244, 255, 1);
+  border: 5px double rgba(50, 208, 255, 1);
 }
 
 #major, #minor {
@@ -167,7 +168,6 @@ canvas {
   opacity: 0.75;
   padding: 20px 0 30px 0;
   font-size: 22px;
-  text-shadow: 1px 1px #ccc;
 }
 
 #menu_wrapper {
@@ -240,17 +240,6 @@ canvas#myCanvas:hover { cursor: crosshair; }
   padding-left: 100px;
 }
 
-.controls {
-  font-family: gill sans;
-  display: block;
-  color: #FFF;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  font-weight: lighter;
-  border: 1px solid black;
-  margin: auto;
-}
-
 #username, #password, #user_username, #user_password, #user_password_confirmation {
   width: 180px;
   padding: 3px;
@@ -277,7 +266,20 @@ button {
   margin: 20px;
   background: rgba(0,0,0,0.6);
 }
+.controls {
+  font-family: gill sans;
+  color: #FFF;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: lighter;
+  border: 1px solid black;
+  margin: auto;
+
+}
 
 input#name {
   margin-left: 19px;
+  padding: 10px 0;
+  background: #000;
+  color: #fff;
 }
