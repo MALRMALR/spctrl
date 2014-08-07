@@ -12,10 +12,12 @@ describe "Users", js: true do
   end
 
   it "logs in if there is no one logged in" do
+    expect(page).to have_content('Login')
     log_in(@test_user.username, 'abc')
   end
 
   it "logs out of session" do
+    expect(page).to xpath('//users')
     log_in(@test_user.username, 'abc')
     visit(root_path)
     log_out()

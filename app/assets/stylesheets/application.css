@@ -35,10 +35,10 @@ img.logo {
   border-radius: 2px;
   margin: 30px 10px 50px 10px;
   cursor: pointer;
-
 }
 
 #random-form {width: 86px;margin: 0 auto;}
+#result { width: 100px; margin: 0 auto;}
 
 h3, h4, span, footer, p {
   font-family: "Trebuchet MS";
@@ -177,12 +177,15 @@ canvas#myCanvas:hover {
 /*   display: block; */
 }
 
+<<<<<<< HEAD
+=======
+.coordinates {
+  text-align: center;
+  color: whitesmoke;
+
+>>>>>>> test
 #password {
   margin-bottom: 20px;
-}
-
-#result {
-  text-align: center;
 }
 
 .demo#sliders {

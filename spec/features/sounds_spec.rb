@@ -8,7 +8,7 @@ describe "Sounds", js: true do
 
   it "can be manipulated on a canvas" do
     view_canvas
-    page.should have_css('#myCanvas')
+    expect(page).to have_css('#myCanvas')
   end
 
 end
