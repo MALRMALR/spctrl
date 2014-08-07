@@ -193,10 +193,6 @@ function wireEffects(audioElement, ctx, inputName1, inputName2, inputName3, inpu
 	});
 }
 
-//////////////////////////////////////
-/////// CANVAS SIGNAL CHAIN //////////
-//////////////////////////////////////
-
 $(document).ready(domReady);
 // page load via turbolinks
 $(document).on('page:load', domReady);

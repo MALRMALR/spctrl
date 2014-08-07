@@ -16,6 +16,12 @@
 
 body {
   background: #000;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 img.logo {
@@ -24,7 +30,8 @@ img.logo {
   padding-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
-  width: 840px;
+  width: 100%;
+  max-width: 840px;
 }
 
 #category1, #category2, #category3 {
@@ -38,7 +45,10 @@ img.logo {
 
 }
 
-#random-form {width: 86px;margin: 0 auto;}
+#random-form {
+  width: 86px;
+  margin: 0 auto;
+}
 
 h3, h4, span, footer, p {
   font-family: "Trebuchet MS";
@@ -107,24 +117,22 @@ a:hover {
   cursor: pointer;
 }
 
-#canvas_container, #main_menu {
+#main_menu {
   width: 100%;
   text-align: center;
 }
 
 #canvas_container {
   position: absolute;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  width: 100%;
+  text-align: center;
 }
 
-#canvas_inner_container {
+.canvas_inner_container {
   position: relative;
   display: inline-block;
+  background: #000;
+  opacity: 0.5;
 }
 canvas {
   width: 100px;
@@ -134,7 +142,7 @@ canvas {
 #myCanvas, #myCanvas1, #myCanvas2, #myCanvas3, #myCanvas4, #myCanvas5, #myCanvas6, #myCanvas7,
 #myCanvas8, #myCanvas9, #myCanvas10, #myCanvas11, #myCanvas12, #myCanvas13, #myCanvas14,
 #myCanvas15, #myCanvas16, #myCanvas17, #myCanvas18, #myCanvas19, #myCanvas20, #myCanvas21, #myCanvas22, #myCanvas23 {
-  border: 2px double whitesmoke;
+  border: 5px double white;
   cursor: crosshair;
   margin: 0 auto;
 }
@@ -146,11 +154,11 @@ canvas {
 #myCanvas16:hover, #myCanvas17:hover, #myCanvas18:hover, #myCanvas19:hover,
 #myCanvas20:hover, #myCanvas21:hover, #myCanvas22:hover, #myCanvas23:hover {
   cursor: crosshair;
-  border: 2px double rgba(29, 244, 255, 1);
+  border: 5px double rgba(29, 244, 255, 1);
 }
 
 #major, #minor {
-  width: 460px;
+  width: 470px;
   float: left;
   padding: 0 0 30px 0;
 }
@@ -161,12 +169,25 @@ canvas {
   font-weight: lighter;
   letter-spacing: 1em;
   color: whitesmoke;
-  opacity: 0.5;
+  opacity: 0.75;
   padding: 20px 0 30px 0;
+  font-size: 22px;
+  text-shadow: 1px 1px #ccc;
+}
+
+#menu_wrapper {
+  margin: 0 auto;
+  background: #000;
+  opacity: 0.5;
+  width: 80%;
+  margin: 20px auto;
 }
 
 #main_menu {
-  padding: 50px 0;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  padding: 30px 0;
   text-transform: uppercase;
 }
 
@@ -239,4 +260,7 @@ canvas {
 #username, #password, #user_username, #user_password, #user_password_confirmation {
   width: 180px;
   padding: 3px;
+}
+
+audio {
 }
