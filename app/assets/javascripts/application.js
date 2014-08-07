@@ -68,10 +68,10 @@ function domReady(){
 		});
 
 	$.backstretch([
-	    "http://i.imgur.com/NSxwAIe.jpg"
-	  , "http://i.imgur.com/DmGcSvO.jpg"
-	  , "http://i.imgur.com/pjwsIMe.jpg"
-	], {duration: 8000, fade: 750});
+	    "http://i.imgur.com/NSxwAIe.jpg",
+			"http://i.imgur.com/DmGcSvO.jpg",
+			"http://i.imgur.com/pjwsIMe.jpg"
+	], {duration: 10000, fade: 600});
 
 	//Wiring Web Audio Effects when no new page
 	var ctx = new AudioContext();
@@ -192,10 +192,6 @@ function wireEffects(audioElement, ctx, inputName1, inputName2, inputName3, inpu
 
 	});
 }
-
-//////////////////////////////////////
-/////// CANVAS SIGNAL CHAIN //////////
-//////////////////////////////////////
 
 $(document).ready(domReady);
 // page load via turbolinks
