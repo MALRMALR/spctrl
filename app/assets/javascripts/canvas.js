@@ -7,6 +7,7 @@ var ctx = new (window.AudioContext || window.webkitAudioContext);
 
 // FREQ REF: http://www.phy.mtu.edu/~suits/notefreqs.html
 
+
 function aMajor() {
   // E, G, B
   var freq = [294.94, 329.63, 392]
