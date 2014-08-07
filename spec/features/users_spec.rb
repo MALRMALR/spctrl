@@ -8,30 +8,32 @@ describe "Users", js: true do
   end
 
   it "signs up if no user is logged in" do
-    sign_up()
+    sign_up
+    expect(page).to have_content(@test_user.username)
   end
 
   it "logs in if there is no one logged in" do
-    expect(page).to have_content('Login')
+    visit(root_path)
+    expect(page).to have_content('LOGIN')
     log_in(@test_user.username, 'abc')
   end
 
-  it "logs out of session" do
-    expect(page).to xpath('//users')
+  it "logs out of session if logged in" do
     log_in(@test_user.username, 'abc')
-    visit(root_path)
-    log_out()
+    expect(page).to have_content('SIGN OUT')
+    log_out
+    expect(page).to have_content('LOGIN')
   end
 
   it "deletes own account" do
     log_in(@test_user.username, 'abc')
     click_link('DrRobotMck')
-    delete_user()
+    delete_user
   end
 
   it "views compositions" do
     log_in(@test_user.username, 'abc')
-    create_composition()
+    create_and_show_composition
     click_button('Save Composition')
   end
 
