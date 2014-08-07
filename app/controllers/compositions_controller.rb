@@ -14,6 +14,7 @@ class CompositionsController < ApplicationController
   end
 
   def show
+    @user = User.new
     @composition = Composition.find(params[:id])
   end
 
