@@ -83,21 +83,6 @@ p {
 
 .field { padding: 20px; }
 
-.btn {
-  border: 3px solid #FFF;
-  background: rgba(0,0,0,0);
-  letter-spacing: 1px;
-  border-radius: 2px;
-  color: #FFF;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-align: center;
-  cursor: pointer;
-  text-transform: uppercase;
-}
-
 a {
   text-decoration: none;
   display: inline;
@@ -178,8 +163,6 @@ canvas {
   margin: 20px auto;
 }
 
-canvas#myCanvas:hover { cursor: crosshair; }
-
 #main_menu {
   text-align: center;
   position: relative;
@@ -192,8 +175,8 @@ canvas#myCanvas:hover { cursor: crosshair; }
 
 #modal {
   position: fixed;
-  z-index: 10;
-  background: rgba(0,0,0,0.8);
+  z-index: 999;
+  background: rgba(0,0,0,1);
   width: 400px;
   display: none;
   color: whitesmoke;
@@ -247,20 +230,18 @@ canvas#myCanvas:hover { cursor: crosshair; }
   padding: 3px;
 }
 
-button {
+button.btn {
   border: 3px solid #FFF;
   background: rgba(0,0,0,0);
   letter-spacing: 1px;
   border-radius: 2px;
   color: #FFF;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 15px;
   text-align: center;
   cursor: pointer;
   text-transform: uppercase;
 }
+
 
 .soundBox {
   display: inline-block;
