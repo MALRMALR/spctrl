@@ -235,9 +235,11 @@ canvas#myCanvas:hover { cursor: crosshair; }
 }
 
 .demo#sliders {
+  position: relative;
   text-align: center;
   padding-top: 40px;
-  padding-left: 100px;
+  padding-left: 120px;
+  margin-bottom: 600px;
 }
 
 .controls {
@@ -272,9 +274,10 @@ button {
 }
 
 .soundBox {
+  display: inline-block;
   float: left;
   width: 300px;
-  margin: 20px;
+  margin: 20px 20px;
   background: rgba(0,0,0,0.6);
 }
 
