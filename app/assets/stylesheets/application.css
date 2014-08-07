@@ -138,6 +138,15 @@ canvas {
   border: 5px double rgba(50, 208, 255, 1);
 }
 
+#myCanvas:active, #myCanvas1:active, #myCanvas2:active, #myCanvas3:active,
+#myCanvas4:active, #myCanvas5:active, #myCanvas6:active, #myCanvas7:active,
+#myCanvas8:active, #myCanvas9:active, #myCanvas10:active, #myCanvas11:active,
+#myCanvas12:active, #myCanvas13:active, #myCanvas14:active, #myCanvas15:active,
+#myCanvas16:active, #myCanvas17:active, #myCanvas18:active, #myCanvas19:active,
+#myCanvas20:active, #myCanvas21:active, #myCanvas22:active, #myCanvas23:active {
+  border: 5px double rgba(94, 12, 232, 1);
+}
+
 #major, #minor {
   width: 470px;
   float: left;
