@@ -1,18 +1,20 @@
-<%= form_tag('/filter', method: :get, id: "result") do %>
-  <%= select_tag(:category1, options_for_select([[ "natural", "natural" ],
-                                                   ["city", "city"],
-                                                   ["noise", "noise"],
-                                                   ["percussion", "percussion"],
-                                                   ["melodic", "melodic"]])) %>
-  <%= select_tag(:category2, options_for_select([[ "happy", "happy" ],
-                                                   ["sad", "sad"],
-                                                   ["angry", "angry"],
-                                                   ["neutral", "neutral"]])) %>
-  <%= select_tag(:category3, options_for_select([[ "sleep", "sleep" ],
-                                                   ["study", "study"],
-                                                   ["walk", "walk"]])) %>
-  <%= submit_tag "Create Composition", class: "btn" %>
-<% end %>
-<%= form_tag('/random', method: :get) do %>
-<% button_tag "Random", class: "btn" %>
-<% end %>
+<div id="main-container">
+  <%= form_tag('/filter', method: :get, id: "result") do %>
+    <%= select_tag(:category1, options_for_select([[ "natural", "natural" ],
+                                                     ["city", "city"],
+                                                     ["noise", "noise"],
+                                                     ["percussion", "percussion"],
+                                                     ["melodic", "melodic"]])) %>
+    <%= select_tag(:category2, options_for_select([[ "happy", "happy" ],
+                                                     ["sad", "sad"],
+                                                     ["angry", "angry"],
+                                                     ["neutral", "neutral"]])) %>
+    <%= select_tag(:category3, options_for_select([[ "sleep", "sleep" ],
+                                                     ["study", "study"],
+                                                     ["walk", "walk"]])) %>
+    <%= submit_tag "Create Composition", class: "btn" %>
+  <% end %>
+  <%= form_tag('/random', method: :get, id: "random-form") do %>
+  <% button_tag "Random", class: "btn" %>
+  <% end %>
+</div>

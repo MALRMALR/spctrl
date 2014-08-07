@@ -29,19 +29,16 @@ IMG.logo {
 
  #category1, #category2, #category3 {
   border: 12px solid transparent;
-  background: rgba(0,0,0,0.8)
-
-/*
+  background: rgba(0,0,0,0.8);
   color: #FFF;
   letter-spacing: 1px;
   border-radius: 2px;
   margin: 30px 10px 50px 10px;
   cursor: pointer;
-*/
 
 }
 
-
+#random-form {width: 86px;margin: 0 auto;}
 
 h3, h4, span, footer, p {
   font-family: "Trebuchet MS";
@@ -91,6 +88,7 @@ p {
   padding-bottom: 10px;
   text-align: center;
   cursor: pointer;
+  text-transform: uppercase;
 }
 
 a {
