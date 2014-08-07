@@ -113,6 +113,7 @@ a:hover {
 }
 
 #canvas_container {
+  position: absolute;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -121,8 +122,11 @@ a:hover {
   user-select: none;
 }
 
-canvas {
+#canvas_inner_container {
+  position: relative;
   display: inline-block;
+}
+canvas {
   width: 100px;
   height: 100px;
 }
@@ -130,9 +134,9 @@ canvas {
 #myCanvas, #myCanvas1, #myCanvas2, #myCanvas3, #myCanvas4, #myCanvas5, #myCanvas6, #myCanvas7,
 #myCanvas8, #myCanvas9, #myCanvas10, #myCanvas11, #myCanvas12, #myCanvas13, #myCanvas14,
 #myCanvas15, #myCanvas16, #myCanvas17, #myCanvas18, #myCanvas19, #myCanvas20, #myCanvas21, #myCanvas22, #myCanvas23 {
-  display: inline;
   border: 2px double whitesmoke;
   cursor: crosshair;
+  margin: 0 auto;
 }
 
 #myCanvas:hover, #myCanvas1:hover, #myCanvas2:hover, #myCanvas3:hover,
@@ -149,6 +153,16 @@ canvas {
   width: 460px;
   float: left;
   padding: 0 0 30px 0;
+}
+
+#majorheading, #minorheading {
+  font-family: 'Gill Sans';
+  text-transform: uppercase;
+  font-weight: lighter;
+  letter-spacing: 1em;
+  color: whitesmoke;
+  opacity: 0.5;
+  padding: 20px 0 30px 0;
 }
 
 #main_menu {
