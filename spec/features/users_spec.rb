@@ -12,6 +12,7 @@ describe "Users", js: true do
   end
 
   it "logs in if there is no one logged in" do
+    # expect(page).to have_xpath('')
     log_in(@test_user.username, 'abc')
   end
 

@@ -23,7 +23,12 @@ $(document).ready(function(){
 	$('body').on('click', '#login', showLogIn);
 	$('body').on('click', '#sign_up', showSignUp);
 	$('#modal').on('click', '#exit', hideModal);
-	// $('#modal').on('click', '.logIn', logIn);
+
+	$.backstretch([
+	    "http://i.imgur.com/NSxwAIe.jpg",
+			"http://i.imgur.com/DmGcSvO.jpg",
+			"http://i.imgur.com/pjwsIMe.jpg"
+	], {duration: 10000, fade: 600});
 
 	// Calls Click Events for Canvas Page
 	clickEvents();
