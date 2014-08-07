@@ -113,6 +113,10 @@ a:hover {
   cursor: pointer;
 }
 
+a:active {
+  color: rgba(94, 12, 232, 1);
+}
+
 #main_menu {
   width: 100%;
   text-align: center;
@@ -131,6 +135,7 @@ a:hover {
   opacity: 0.5;
   margin: 0 4px;
 }
+
 canvas {
   width: 100px;
   height: 100px;
@@ -154,6 +159,15 @@ canvas {
   border: 5px double rgba(50, 208, 255, 1);
 }
 
+#myCanvas:active, #myCanvas1:active, #myCanvas2:active, #myCanvas3:active,
+#myCanvas4:active, #myCanvas5:active, #myCanvas6:active, #myCanvas7:active,
+#myCanvas8:active, #myCanvas9:active, #myCanvas10:active, #myCanvas11:active,
+#myCanvas12:active, #myCanvas13:active, #myCanvas14:active, #myCanvas15:active,
+#myCanvas16:active, #myCanvas17:active, #myCanvas18:active, #myCanvas19:active,
+#myCanvas20:active, #myCanvas21:active, #myCanvas22:active, #myCanvas23:active {
+  border: 5px double rgba(94, 12, 232, 1);
+}
+
 #major, #minor {
   width: 470px;
   float: left;
@@ -173,12 +187,10 @@ canvas {
 
 #menu_wrapper {
   margin: 0 auto;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   width: 80%;
   margin: 20px auto;
 }
-
-canvas#myCanvas:hover { cursor: crosshair; }
 
 #main_menu {
   text-align: center;
@@ -192,8 +204,8 @@ canvas#myCanvas:hover { cursor: crosshair; }
 
 #modal {
   position: fixed;
-  z-index: 10;
-  background: rgba(0,0,0,.9);
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.9);
   width: 400px;
   display: none;
   color: whitesmoke;
@@ -239,6 +251,8 @@ canvas#myCanvas:hover { cursor: crosshair; }
   position: relative;
   text-align: center;
   padding-top: 40px;
+  padding-left: 120px;
+  margin-bottom: 20px;
   width: 1100px;
   margin: 0 auto 600px auto;
 }
@@ -246,6 +260,18 @@ canvas#myCanvas:hover { cursor: crosshair; }
 #username, #password, #user_username, #user_password, #user_password_confirmation {
   width: 180px;
   padding: 3px;
+}
+
+.btn {
+  border: 3px solid #FFF;
+  background: rgba(0,0,0,0);
+  letter-spacing: 1px;
+  border-radius: 2px;
+  color: #FFF;
+  padding: 10px 15px;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
 .soundBox {
