@@ -55,15 +55,15 @@ function domReady(){
 			//Wiring Web Audio Effects
 			var ctx = new AudioContext();
 			//player 1
-			var audioElement = $('#sliders audio')[0]
+			var audioElement = $('#sliders audio')[0];
 			wireEffects(audioElement, ctx, 'delayTime', 'feedback', 'frequency', 'reverb', 'reverbGain', 'filter', 'filterGain');
 
 			//player 2
-			var audioElement2 = $('#sliders audio')[1]
+			var audioElement2 = $('#sliders audio')[1];
 			wireEffects(audioElement2, ctx, 'delayTime2', 'feedback2', 'frequency2', 'reverb2', 'reverbGain2', 'filter2', 'filterGain2');
 
 			//player 3
-			var audioElement3 = $('#sliders audio')[2]
+			var audioElement3 = $('#sliders audio')[2];
 			wireEffects(audioElement3, ctx, 'delayTime3', 'feedback3', 'frequency3', 'reverb3', 'reverbGain3', 'filter3', 'filterGain3');
 		});
 
@@ -71,20 +71,20 @@ function domReady(){
 	    "http://i.imgur.com/NSxwAIe.jpg",
 			"http://i.imgur.com/DmGcSvO.jpg",
 			"http://i.imgur.com/pjwsIMe.jpg"
-	], {duration: 10000, fade: 600});
+	], {duration: 8000, fade: 600});
 
 	//Wiring Web Audio Effects when no new page
 	var ctx = new AudioContext();
 	//player 1
-	var audioElement = $('#sliders audio')[0]
+	var audioElement = $('#sliders audio')[0];
 	wireEffects(audioElement, ctx, 'delayTime', 'feedback', 'frequency', 'reverb', 'reverbGain', 'filter', 'filterGain');
 
 	//player 2
-	var audioElement2 = $('#sliders audio')[1]
+	var audioElement2 = $('#sliders audio')[1];
 	wireEffects(audioElement2, ctx, 'delayTime2', 'feedback2', 'frequency2', 'reverb2', 'reverbGain2', 'filter2', 'filterGain2');
 
 	//player 3
-	var audioElement3 = $('#sliders audio')[2]
+	var audioElement3 = $('#sliders audio')[2];
 	wireEffects(audioElement3, ctx, 'delayTime3', 'feedback3', 'frequency3', 'reverb3', 'reverbGain3', 'filter3', 'filterGain3');
 
 	// Calls Click Events for Canvas Page
@@ -140,7 +140,7 @@ function wireEffects(audioElement, ctx, inputName1, inputName2, inputName3, inpu
     biFilterGain.gain.value = 0;
 
     biFilter.connect(biFilterGain);
-    biFilterGain.connect(ctx.destination)
+    biFilterGain.connect(ctx.destination);
 
 
 		//effect connections
@@ -150,7 +150,7 @@ function wireEffects(audioElement, ctx, inputName1, inputName2, inputName3, inpu
     source.connect(ctx.destination);
     delay.connect(ctx.destination);
     //verb.connect(ctx.destination);
-    biFilter.connect(ctx.destination);;
+    biFilter.connect(ctx.destination);
 
     var controls = $("div#sliders");
     //delay controls
@@ -160,7 +160,7 @@ function wireEffects(audioElement, ctx, inputName1, inputName2, inputName3, inpu
 
     controls.find("input[name='"+inputName2+"']").on('input', function() {
       feedback.gain.value = $(this).val();
-      console.log(feedback.gain.value)
+      console.log(feedback.gain.value);
     });
 
     controls.find("input[name='"+inputName3+"']").on('input', function() {

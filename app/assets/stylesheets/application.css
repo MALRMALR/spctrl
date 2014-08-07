@@ -26,8 +26,8 @@ body {
 
 img.logo {
   display: block;
-  padding-top: 40px;
-  padding-bottom: 30px;
+  padding-top: 60px;
+  padding-bottom: 40px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -36,12 +36,13 @@ img.logo {
 
 #category1, #category2, #category3 {
   border: 12px solid transparent;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.6);
   color: #FFF;
   letter-spacing: 1px;
   border-radius: 2px;
   margin: 30px 10px 50px 10px;
   cursor: pointer;
+  font-size: 13px;
 }
 
 #result {text-align: center;}
@@ -83,6 +84,21 @@ p {
 
 .field { padding: 20px; }
 
+.btn {
+  border: 3px solid #FFF;
+  background: rgba(0,0,0,.6);
+  letter-spacing: 1px;
+  border-radius: 3px;
+  color: #FFF;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
 a {
   text-decoration: none;
   display: inline;
@@ -119,6 +135,7 @@ a:active {
   opacity: 0.5;
   margin: 0 4px;
 }
+
 canvas {
   width: 100px;
   height: 100px;
@@ -187,8 +204,8 @@ canvas {
 
 #modal {
   position: fixed;
-  z-index: 999;
-  background: rgba(0,0,0,1);
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.9);
   width: 400px;
   display: none;
   color: whitesmoke;
@@ -200,6 +217,8 @@ canvas {
 #exit {
   float: right;
   padding-top: 15px;
+  cursor: pointer;
+  font-size: 20px;
 }
 
 #login:hover, #sign_up:hover {
@@ -217,7 +236,6 @@ canvas {
 
 .user_signup {
   text-align: center;
-/*   display: block; */
 }
 
 .coordinates {
@@ -235,6 +253,8 @@ canvas {
   padding-top: 40px;
   padding-left: 120px;
   margin-bottom: 20px;
+  width: 1100px;
+  margin: 0 auto 600px auto;
 }
 
 #username, #password, #user_username, #user_password, #user_password_confirmation {
@@ -269,7 +289,6 @@ canvas {
   font-weight: lighter;
   border: 1px solid black;
   margin: auto;
-
 }
 
 input#name {
