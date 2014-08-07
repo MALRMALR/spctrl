@@ -35,10 +35,10 @@ img.logo {
   border-radius: 2px;
   margin: 30px 10px 50px 10px;
   cursor: pointer;
-
 }
 
 #random-form {width: 86px;margin: 0 auto;}
+#result { width: 100px; margin: 0 auto;}
 
 h3, h4, span, footer, p {
   font-family: "Trebuchet MS";
@@ -177,17 +177,12 @@ canvas#myCanvas:hover {
 /*   display: block; */
 }
 
-<<<<<<< HEAD
 .coordinates {
   text-align: center;
   color: whitesmoke;
-=======
+
 #password {
   margin-bottom: 20px;
-}
-
-#result {
-  text-align: center;
 }
 
 .demo#sliders {
@@ -206,5 +201,4 @@ canvas#myCanvas:hover {
 #username, #password, #user_username, #user_password, #user_password_confirmation {
   width: 180px;
   padding: 3px;
->>>>>>> 876054c2f3c49765997d2c10171535b8a3734c30
 }
