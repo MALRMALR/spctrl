@@ -97,6 +97,10 @@ a:hover {
   cursor: pointer;
 }
 
+a:active {
+  color: rgba(94, 12, 232, 1);
+}
+
 #main_menu {
   width: 100%;
   text-align: center;
