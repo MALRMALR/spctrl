@@ -1,18 +1,14 @@
 ////////////////////////////////////////////////////////////
-// Function for mousedown / mouseup events on Canvas Page //
+/////// Function for mousedown events on Canvas Page ///////
 ////////////////////////////////////////////////////////////
 
-// add wavesurfer.js
-
-// mapping mouse move to synth effects
-
-//this is a test bruh
 
 var ctx = new (window.AudioContext || window.webkitAudioContext);
 
 // FREQ REF: http://www.phy.mtu.edu/~suits/notefreqs.html
+
 function aMajor() {
-  //E, G, B
+  // E, G, B
   var freq = [294.94, 329.63, 392]
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
@@ -38,7 +34,7 @@ function aSharpMajor() {
 }
 
 function bMajor() {
-  //A, C#, E
+  // A, C#, E
   var freq = [440, 554.37, 329.63, 659.25]
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
