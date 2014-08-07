@@ -20,9 +20,9 @@ body {
   background-repeat: no-repeat;
 }
 
-IMG.logo {
+img.logo {
   display: block;
-  padding-top: 40px;
+  padding-top: 0;
   margin-left: auto;
   margin-right: auto;
 }
@@ -128,4 +128,9 @@ canvas#myCanvas:hover {
 .user_signup {
   text-align: center;
 /*   display: block; */
+}
+
+.coordinates {
+  text-align: center;
+  color: whitesmoke;
 }

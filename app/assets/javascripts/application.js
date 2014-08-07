@@ -19,14 +19,18 @@
 
 $(document).ready(function(){
 	console.log("Loaded, bro");
-
+	var body = $("body");
 	$('body').on('click', '#login', showLogIn);
 	$('body').on('click', '#sign_up', showSignUp);
 	$('#modal').on('click', '#exit', hideModal);
 	// $('#modal').on('click', '.logIn', logIn);
 
-	// Calls Click Events for Canvas Page
-	clickEvents();
+	// shows mouse coordinates on canvas page
+	showCoordinates();
+
+	// Calls Click Events for CANVAS.JS
+	var canvas = $('#myCanvas');
+	$(canvas).on('mousedown', clickEvents);
 
 
 	//Wiring Web Audio Effects
@@ -44,6 +48,10 @@ $(document).ready(function(){
 	wireEffects(audioElement3, ctx, 'delayTime3', 'feedback3', 'frequency3', 'reverb3', 'filter3');
 
 });
+
+/////////////////////////////////////////
+/////// HOME PAGE SIGNAL CHAIN //////////
+/////////////////////////////////////////
 
 function wireEffects(audioElement, ctx, inputName1, inputName2, inputName3, inputName4, inputName5) {
 	audioElement.addEventListener('playing', function(){
@@ -107,10 +115,126 @@ function wireEffects(audioElement, ctx, inputName1, inputName2, inputName3, inpu
 			verb.seconds = parseInt($(this).val()) * 2;
 			verb.decay = $(this).val() * 0.5;
 		});
-		//biquad filter controll
+		//biquad filter control
 		controls.find("input[name='"+inputName5+"']").on('input', function() {
 			biFilter.frequency.value = parseInt($(this).val());
 			console.log(biFilter.frequency.value);
 		});
 	});
+}
+
+//////////////////////////////////////
+/////// CANVAS SIGNAL CHAIN //////////
+//////////////////////////////////////
+
+function clickEvents() {
+	var canvas = $('#myCanvas')
+
+	var context = new AudioContext() || new webkitAudioContext();
+
+	// VCO
+	var vco = context.createOscillator();
+	vco.type = vco.SINE;                   // OSC generates SINE WAVE
+	vco.frequency.value = this.frequency;
+	vco.start(0);
+	
+
+	// GAIN
+	var vca = context.createGain();
+	vca.gain.value = 1;
+
+	// FILTER - http://jsfiddle.net/MarijnS95/X38pk/3/
+	var filter = context.createBiquadFilter();
+	filter.type = filter.LOWPASS;
+	filter.Q.value = 2;
+	filter.frequency.value = 220; // in HZ
+	filter.gain.value = 60;
+
+	// Distortion
+
+
+	//REVERB
+
+	var convolver = new SimpleReverb(context, {
+		seconds: 4,
+		decay: 10,
+		reverse: 1
+	});
+	convolver.seconds = 2;
+	convolver.decay = 5;
+
+
+	// Analyser
+
+	var analyser = context.createAnalyser();  // This is used to create a visualization of audio wave
+
+	// DELAY
+
+	var delay = context.createDelay(5.0);
+
+
+	// Effects Connections
+	vco.connect(vca);
+	vca.connect(filter)
+	filter.connect(convolver.input)
+	convolver.connect(delay)
+	delay.connect(analyser)
+	analyser.connect(context.destination);
+
+
+	//Frequency Control - finds slider on canvas page and maps it to effects
+	var canvasControls = $('div#canvas-controls');
+
+		canvasControls.find("input[name='delay']").on('mousedown', function() {
+			delay.delayTime.value = $(this).val();
+		});
+
+		canvasControls.find("input[name='frequency']").on('mousedown', function() {
+			filter.frequency.value = $(this).val();
+		})
+
+		//originally had an underscore as first input
+		canvas.mousedown(function (frequency) {
+			console.log("CLIQUE CLIQUE")
+			vco.frequency.value = frequency;
+			vca.gain.value = 1; // sets filter gain to 1
+		});
+		// originally had two underscores as inputs
+		canvas.mouseup(function () {
+			console.log("LEAVING???")
+			vca.gain.value = 0;  // sets gain to 0
+		});
+};
+
+
+// function adjustCanvasEffects() {
+// 	var canvas = $('#myCanvas');
+// 	var canvasControls = $('#canvas-controls')
+// 	$(canvas).on("mousemove", function( event ) {
+// 	canvasControls.find("input[name='frequency']").attr('value', event.pageX);
+// 	canvasControls.find("input[name='convolver']").attr('value', event.pageY);
+//
+//
+//
+//
+// // $(canvasControls).find("input[name='frequency']").on('input', function() {
+// // 		filter.frequency.value = event.pageX * 2;
+// // 		console.log(filter.frequency.value)
+// // 	})
+// // $(canvasControls).find("input[name='reverb']").on('input', function() {
+// // 		reverb.value = event.pageY * 2;
+// // 		console.log(filter.frequency.value)
+// // 	})
+// })
+// }
+
+
+function showCoordinates() {
+	var body = $('body');
+	var canvas = $('#myCanvas')
+	var heading = $('<h1>').addClass('coordinates');
+	$(heading).appendTo(body);
+		$(canvas).on("mousemove", function( event ) {
+			$(heading).text("Position X: " + event.pageX + ", Position Y: "+ event.pageY);
+		});
 }
