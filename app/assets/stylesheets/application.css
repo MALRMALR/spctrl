@@ -47,8 +47,8 @@ img.logo {
 
 #result {text-align: center;}
 
-#random-form {
-  width: 86px;
+#title-form {
+  width: 300px;
   margin: 0 auto;
 }
 
@@ -292,7 +292,7 @@ canvas {
 }
 
 input#name {
-  margin-left: 19px;
+  margin-left: px;
   padding: 10px 0;
   background: #000;
   color: #fff;

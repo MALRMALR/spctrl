@@ -1,12 +1,12 @@
 <div class="demo" id="sliders">
   <%= render partial: 'sound', locals: {sound: @sounds[0],
-                                delayTime: 'delayTime',
-                                feedback: 'feedback',
-                                frequency: 'frequency',
-                                reverb: 'reverb',
-                                reverbGain: 'reverbGain',
-                                filter: 'filter',
-                                filterGain: 'filterGain'} %>
+                                        delayTime: 'delayTime',
+                                        feedback: 'feedback',
+                                        frequency: 'frequency',
+                                        reverb: 'reverb',
+                                        reverbGain: 'reverbGain',
+                                        filter: 'filter',
+                                        filterGain: 'filterGain'} %>
   <%= render partial: 'sound', locals: {sound: @sounds[1],
                                         delayTime: 'delayTime2',
                                         feedback: 'feedback2',
@@ -26,11 +26,11 @@
 </div>
 
 <% if session[:current_user] %>
-  <%= form_tag '/compositions/create', method: 'post' do %>
+  <%= form_tag '/compositions/create', method: 'post' , id: 'title-form' do %>
     <%= hidden_field_tag(:sound_id1, @sounds[0].id) %>
     <%= hidden_field_tag(:sound_id2, @sounds[1].id) %>
     <%= hidden_field_tag(:sound_id3, @sounds[2].id) %>
-    <%= text_field_tag(:name) %>
+    <%= text_field_tag(:name, 'TITLE') %>
     <%= submit_tag "Save Composition", class: 'btn' %>
   <% end %>
 <% end %>

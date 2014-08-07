@@ -25,13 +25,12 @@
                                           filterGain: 'filterGain3'} %>
 </div>
 
-
 <% if session[:current_user] %>
-<%= form_tag '/compositions/create', method: 'post', :id => 'random-form' do %>
+  <%= form_tag '/compositions/create', method: 'post' , id: 'title-form' do %>
     <%= hidden_field_tag(:sound_id1, @sound1[0].id) %>
     <%= hidden_field_tag(:sound_id2, @sound2[0].id) %>
     <%= hidden_field_tag(:sound_id3, @sound3[0].id) %>
-    <%= text_field_tag(:name, 'Title') %>
-    <%= submit_tag "Save Composition", :class=> 'btn' %>
+    <%= text_field_tag(:name, 'TITLE') %>
+    <%= submit_tag "Save Composition", class: 'btn' %>
   <% end %>
 <% end %>
