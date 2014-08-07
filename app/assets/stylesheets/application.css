@@ -221,7 +221,7 @@ canvas {
   text-align: center;
   padding-top: 40px;
   padding-left: 120px;
-  margin-bottom: 600px;
+  margin-bottom: 20px;
 }
 
 #username, #password, #user_username, #user_password, #user_password_confirmation {
