@@ -44,15 +44,16 @@ img.logo {
   cursor: pointer;
 }
 
-<<<<<<< HEAD
-#random-form {width: 86px; margin: 0 auto;}
-#result {text-align: center;}
-=======
+
+#result {text-align:
+  center;
+}
+
 #random-form {
   width: 86px;
   margin: 0 auto;
 }
->>>>>>> ae1acb62529b9bb10748ad20ac5d8d3575bb9325
+
 
 h3, h4, span, footer, p {
   font-family: "Trebuchet MS";
