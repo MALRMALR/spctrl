@@ -25,7 +25,6 @@ $(document).ready(function(){
 	$('#modal').on('click', '#exit', hideModal);
 
 	$(document).on("page:load", function() {
-
 		//Wiring Web Audio Effects
 		var ctx = new AudioContext();
 		//player 1
