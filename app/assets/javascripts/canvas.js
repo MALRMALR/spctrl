@@ -1,101 +1,323 @@
 ////////////////////////////////////////////////////////////
-// Function for mousedown / mouseup events on Canvas Page //
+/////// Function for mousedown events on Canvas Page ///////
 ////////////////////////////////////////////////////////////
 
-// add wavesurfer.js
+
+var ctx = new (window.AudioContext || window.webkitAudioContext);
+
+// FREQ REF: http://www.phy.mtu.edu/~suits/notefreqs.html
 
 
-function clickEvents () {
-  var canvas = $('#myCanvas')
+function aMajor() {
+  // E, G, B
+  var freq = [294.94, 329.63, 392]
+  for (var i = 0; i < freq.length; i++) {
+    var mainosc = ctx.createOscillator();
+    mainosc.frequency.value = freq[i];
+    mainosc.connect(ctx.destination);
+    currentTime = ctx.currentTime;
+    mainosc.start(currentTime);
+    mainosc.stop(currentTime + 0.6);
+  };
+}
 
-  var context = new AudioContext();
+function aSharpMajor() {
+  // A#, C#, F
+  var freq = [466.16, 277.18, 349.23]
+  for (var i = 0; i < freq.length; i++) {
+    var mainosc = ctx.createOscillator();
+    mainosc.frequency.value = freq[i];
+    mainosc.connect(ctx.destination);
+    currentTime = ctx.currentTime;
+    mainosc.start(currentTime);
+    mainosc.stop(currentTime + 0.6);
+  };
+}
 
-  /* VCO */
-  var vco = context.createOscillator();
-  vco.type = vco.SINE;
-  vco.frequency.value = this.frequency;
-  vco.start(0);
+function bMajor() {
+  // A, C#, E
+  var freq = [440, 554.37, 329.63, 659.25]
+  for (var i = 0; i < freq.length; i++) {
+    var mainosc = ctx.createOscillator();
+    mainosc.frequency.value = freq[i];
+    mainosc.connect(ctx.destination);
+    currentTime = ctx.currentTime;
+    mainosc.start(currentTime);
+    mainosc.stop(currentTime + 0.6);
+  };
+}
 
-  /* VCA */
-  var vca = context.createGain();
-  vca.gain.value = 0;
+function cMajor() {
+  // C4, E4, D4
+  var freq = [261.63, 329.63, 392.00];
 
-  /* FILTER
-  http://jsfiddle.net/MarijnS95/X38pk/3/
-  */
+  for (var i = 0; i < freq.length; i++) {
+    var mainosc = ctx.createOscillator();
+    mainosc.frequency.value = freq[i];
+    mainosc.connect(ctx.destination);
+    currentTime = ctx.currentTime;
+    mainosc.start(currentTime);
+    mainosc.stop(currentTime + 0.6);
+  };
+}
 
-  var filter = context.createBiquadFilter();
-  filter.type = filter.LOWPASS;
-  filter.Q.value = 2;
-  filter.frequency.value = 220; // in HZ
-  filter.gain.value = 60;
+function cSharpMajor() {
+  // C#, F, G#
+  var freq = [277.18, 349.23, 415.30];
+  for (var i = 0; i < freq.length; i++) {
+    var mainosc = ctx.createOscillator();
+    mainosc.frequency.value = freq[i];
+    mainosc.connect(ctx.destination);
+    currentTime = ctx.currentTime;
+    mainosc.start(currentTime);
+    mainosc.stop(currentTime + 0.6);
+  };
+}
 
-  /* REVERB http://noisehack.com/custom-audio-effects-javascript-web-audio-api/ */
+function dMajor() {
+  // D, F#, A
+  var freq = [587.33, 369.99, 440];
+  for (var i = 0; i < freq.length; i++) {
+    var mainosc = ctx.createOscillator();
+    mainosc.frequency.value = freq[i];
+    mainosc.connect(ctx.destination);
+    currentTime = ctx.currentTime;
+    mainosc.start(currentTime);
+    mainosc.stop(currentTime + 0.6);
+  };
+}
 
-  var convolver = context.createConvolver();
-    noiseBuffer = context.createBuffer(2, 2 * context.sampleRate, context.sampleRate),
-    left = noiseBuffer.getChannelData(0),
-    right = noiseBuffer.getChannelData(1);
-    for (var i = 0; i < noiseBuffer.length; i++) {
-      left[i] = Math.random() * 5 - 1;
-      right[i] = Math.random() * 7 - 1;
-    }
-    convolver.buffer = noiseBuffer;
+function dSharpMajor() {
+  // D#, G, A#
+  var freq = [311.13, 392, 466.16]
+  for (var i = 0; i < freq.length; i++) {
+    var mainosc = ctx.createOscillator();
+    mainosc.frequency.value = freq[i];
+    mainosc.connect(ctx.destination);
+    currentTime = ctx.currentTime;
+    mainosc.start(currentTime);
+    mainosc.stop(currentTime + 0.6);
+  };
+}
 
-  // var convolver = new SimpleReverb(ctx, {
-  //   seconds: 0,
-  //   decay: 0,
-  //   reverse: 0
-  // });
-  // convolver.seconds = 0.05;
-  // convolver.decay = 0.5;
+function eMajor() {
+  //E, G, B
+  var freq = [329.63, 392, 493.88]
+  for (var i = 0; i < freq.length; i++) {
+    var mainosc = ctx.createOscillator();
+    mainosc.frequency.value = freq[i];
+    mainosc.connect(ctx.destination);
+    currentTime = ctx.currentTime;
+    mainosc.start(currentTime);
+    mainosc.stop(currentTime + 0.6);
+  };
+}
 
+function fMajor() {
+  // A, C, E
+  var freq = [440, 523.25, 659.25];
+  for (var i = 0; i < freq.length; i++) {
+    var mainosc = ctx.createOscillator();
+    mainosc.frequency.value = freq[i];
+    mainosc.connect(ctx.destination);
+    currentTime = ctx.currentTime;
+    mainosc.start(currentTime);
+    mainosc.stop(currentTime + 0.6);
+  };
+}
 
-  /* Analyser */
+function fSharpMajor() {
+  // F#, A#, C#
+  var freq = [369.99, 466.16, 554.37]
+  for (var i = 0; i < freq.length; i++) {
+    var mainosc = ctx.createOscillator();
+    mainosc.frequency.value = freq[i];
+    mainosc.connect(ctx.destination);
+    currentTime = ctx.currentTime;
+    mainosc.start(currentTime);
+    mainosc.stop(currentTime + 0.6);
+  };
+}
 
-  var analyser = context.createAnalyser();  // This is used to create a visualization of audio wave
+function gMajor() {
+  // G, B, D
+  var freq = [392, 493.88, 293.66];
+  for (var i = 0; i < freq.length; i++) {
+    var mainosc = ctx.createOscillator();
+    mainosc.frequency.value = freq[i];
+    mainosc.connect(ctx.destination);
+    currentTime = ctx.currentTime;
+    mainosc.start(currentTime);
+    mainosc.stop(currentTime + 0.6);
+  };
+}
 
-  /* DELAY */
+function gSharpMajor() {
+  // G#, C, D#
+  var freq = [415.30, 440, 622.25]
+  for (var i = 0; i < freq.length; i++) {
+    var mainosc = ctx.createOscillator();
+    mainosc.frequency.value = freq[i];
+    mainosc.connect(ctx.destination);
+    currentTime = ctx.currentTime;
+    mainosc.start(currentTime);
+    mainosc.stop(currentTime + 0.6);
+  };
+}
 
-  var delay = context.createDelay(5.0);     //
+function aMinor() {
+  // A, E, C
+  var freq = [440, 329.63, 523.25];
+  for (var i = 0; i < freq.length; i++) {
+    var mainosc = ctx.createOscillator();
+    mainosc.frequency.value = freq[i];
+    mainosc.connect(ctx.destination);
+    currentTime = ctx.currentTime;
+    mainosc.start(currentTime);
+    mainosc.stop(currentTime + 0.6);
+  };
+}
 
+function aSharpMinor() {
+  // A#, C#, F
+  var freq = [233.08, 277.18, 349.23]
+  for (var i = 0; i < freq.length; i++) {
+    var mainosc = ctx.createOscillator();
+    mainosc.frequency.value = freq[i];
+    mainosc.connect(ctx.destination);
+    currentTime = ctx.currentTime;
+    mainosc.start(currentTime);
+    mainosc.stop(currentTime + 0.6);
+  };
+}
 
-  /* Connections */
-  vco.connect(vca);
-  vca.connect(filter)
-  filter.connect(convolver)
-  convolver.connect(delay)
-  delay.connect(analyser)
-  analyser.connect(context.destination);
+function bMinor() {
+  // B, D, F#
+  var freq = [493.88, 587.33, 369.99];
+  for (var i = 0; i < freq.length; i++) {
+    var mainosc = ctx.createOscillator();
+    mainosc.frequency.value = freq[i];
+    mainosc.connect(ctx.destination);
+    currentTime = ctx.currentTime;
+    mainosc.start(currentTime);
+    mainosc.stop(currentTime + 0.6);
+  };
+}
 
-//   // WAVESURVER JS
-//
-//   var wavesurfer = Object.create(WaveSurfer);
-//
-//   wavesurfer.init({
-//     // your options here
-//   });
-//
-//   wavesurfer.on('ready', function () {
-//       var timeline = Object.create(WaveSurfer.Timeline);
-//
-//       timeline.init({
-//           wavesurfer: wavesurfer,
-//           container: "#wave-timeline"
-//       });
-//   });
-//
-// wavesurfer.load(context.destination);
+function cMinor() {
+  // B, D#, F#
+  var freq = [246.94, 311.13, 369.99]
+  for (var i = 0; i < freq.length; i++) {
+    var mainosc = ctx.createOscillator();
+    mainosc.frequency.value = freq[i];
+    mainosc.connect(ctx.destination);
+    currentTime = ctx.currentTime;
+    mainosc.start(currentTime);
+    mainosc.stop(currentTime + 0.6);
+  };
+}
 
-  //originally had an underscore as first input
-  canvas.mousedown(function (frequency) {
-    console.log("CLIQUE CLIQUE")
-    vco.frequency.value = frequency;
-    vca.gain.value = 1;
-  });
-  // originally had two underscores as inputs
-  canvas.mouseup(function () {
-    console.log("DONE?")
-    vca.gain.value = 0;  // sets gain to 0
-  });
+function cSharpMinor() {
+  // C#, E, G#
+  var freq = [277.18, 349.23, 415.30];
+  for (var i = 0; i < freq.length; i++) {
+    var mainosc = ctx.createOscillator();
+    mainosc.frequency.value = freq[i];
+    mainosc.connect(ctx.destination);
+    currentTime = ctx.currentTime;
+    mainosc.start(currentTime);
+    mainosc.stop(currentTime + 0.6);
+  };
+}
+
+function dMinor() {
+  // A4, D4, F4
+  var freq = [440, 293.66, 349.23];
+
+  for (var i = 0; i < freq.length; i++) {
+    var mainosc = ctx.createOscillator();
+    mainosc.frequency.value = freq[i];
+    mainosc.connect(ctx.destination);
+    currentTime = ctx.currentTime;
+    mainosc.start(currentTime);
+    mainosc.stop(currentTime + 0.6);
+  };
+}
+
+function dSharpMinor() {
+  // D#, F#, A#
+  var freq = [311.13, 369.99, 466.16]
+  for (var i = 0; i < freq.length; i++) {
+    var mainosc = ctx.createOscillator();
+    mainosc.frequency.value = freq[i];
+    mainosc.connect(ctx.destination);
+    currentTime = ctx.currentTime;
+    mainosc.start(currentTime);
+    mainosc.stop(currentTime + 0.6);
+  };
+}
+
+function eMinor() {
+  // E, G, B
+  var freq = [329.63, 392, 493.88]
+  for (var i = 0; i < freq.length; i++) {
+    var mainosc = ctx.createOscillator();
+    mainosc.frequency.value = freq[i];
+    mainosc.connect(ctx.destination);
+    currentTime = ctx.currentTime;
+    mainosc.start(currentTime);
+    mainosc.stop(currentTime + 0.6);
+  };
+}
+
+function fMinor() {
+  // F, G#, C
+  var freq = [349.23, 415.30, 440]
+  for (var i = 0; i < freq.length; i++) {
+    var mainosc = ctx.createOscillator();
+    mainosc.frequency.value = freq[i];
+    mainosc.connect(ctx.destination);
+    currentTime = ctx.currentTime;
+    mainosc.start(currentTime);
+    mainosc.stop(currentTime + 0.6);
+  };
+}
+
+function fSharpMinor() {
+  // F#, A, C#
+  var freq = [369, 440, 554.37]
+  for (var i = 0; i < freq.length; i++) {
+    var mainosc = ctx.createOscillator();
+    mainosc.frequency.value = freq[i];
+    mainosc.connect(ctx.destination);
+    currentTime = ctx.currentTime;
+    mainosc.start(currentTime);
+    mainosc.stop(currentTime + 0.6);
+  };
+}
+
+function gMinor() {
+  // G, A#, D
+  var freq = [392, 466.16, 587.33]
+  for (var i = 0; i < freq.length; i++) {
+    var mainosc = ctx.createOscillator();
+    mainosc.frequency.value = freq[i];
+    mainosc.connect(ctx.destination);
+    currentTime = ctx.currentTime;
+    mainosc.start(currentTime);
+    mainosc.stop(currentTime + 0.6);
+  };
+}
+
+function gSharpMinor() {
+  // G#, B, D#
+  var freq = [415.30, 493.88, 622.25]
+  for (var i = 0; i < freq.length; i++) {
+    var mainosc = ctx.createOscillator();
+    mainosc.frequency.value = freq[i];
+    mainosc.connect(ctx.destination);
+    currentTime = ctx.currentTime;
+    mainosc.start(currentTime);
+    mainosc.stop(currentTime + 0.6);
+  };
 }

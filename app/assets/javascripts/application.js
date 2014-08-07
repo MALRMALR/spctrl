@@ -15,50 +15,86 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require backstretch
 //= require_tree .
 
-$(document).ready(function(){
-	console.log("Loaded, bro");
+function domReady(){
+	modalReady();
 
+	console.log("Loaded, bro");
+	var body = $("body");
 	$('body').on('click', '#login', showLogIn);
 	$('body').on('click', '#sign_up', showSignUp);
 	$('#modal').on('click', '#exit', hideModal);
+	$('#myCanvas').mousedown(aMajor);
+  $('#myCanvas1').mousedown(aSharpMajor);
+  $('#myCanvas2').mousedown(bMajor);
+  $('#myCanvas3').mousedown(cMajor);
+  $('#myCanvas4').mousedown(cSharpMajor);
+  $('#myCanvas5').mousedown(dMajor);
+  $('#myCanvas6').mousedown(dSharpMajor);
+  $('#myCanvas7').mousedown(eMajor);
+  $('#myCanvas8').mousedown(fMajor);
+  $('#myCanvas9').mousedown(fSharpMajor);
+  $('#myCanvas10').mousedown(gMajor);
+  $('#myCanvas11').mousedown(gSharpMajor);
+  $('#myCanvas12').mousedown(aMinor);
+  $('#myCanvas13').mousedown(aSharpMinor);
+  $('#myCanvas14').mousedown(bMinor);
+  $('#myCanvas15').mousedown(cMinor);
+  $('#myCanvas16').mousedown(cSharpMinor);
+  $('#myCanvas17').mousedown(dMinor);
+  $('#myCanvas18').mousedown(dSharpMinor);
+  $('#myCanvas19').mousedown(eMinor);
+  $('#myCanvas20').mousedown(fMinor);
+  $('#myCanvas21').mousedown(fSharpMinor);
+  $('#myCanvas22').mousedown(gMinor);
+  $('#myCanvas23').mousedown(gSharpMinor);
 
-	$(document).on("page:load", function() {
+		$(document).on("page:load", function() {
+			//Wiring Web Audio Effects
+			var ctx = new AudioContext();
+			//player 1
+			var audioElement = $('#sliders audio')[0];
+			wireEffects(audioElement, ctx, 'delayTime', 'feedback', 'frequency', 'reverb', 'reverbGain', 'filter', 'filterGain');
 
-		//Wiring Web Audio Effects
-		var ctx = new AudioContext();
-		//player 1
-		var audioElement = $('#sliders audio')[0]
-		wireEffects(audioElement, ctx, 'delayTime', 'feedback', 'frequency', 'reverb', 'reverbGain', 'filter', 'filterGain');
+			//player 2
+			var audioElement2 = $('#sliders audio')[1];
+			wireEffects(audioElement2, ctx, 'delayTime2', 'feedback2', 'frequency2', 'reverb2', 'reverbGain2', 'filter2', 'filterGain2');
 
-		//player 2
-		var audioElement2 = $('#sliders audio')[1]
-		wireEffects(audioElement2, ctx, 'delayTime2', 'feedback2', 'frequency2', 'reverb2', 'reverbGain2', 'filter2', 'filterGain2');
+			//player 3
+			var audioElement3 = $('#sliders audio')[2];
+			wireEffects(audioElement3, ctx, 'delayTime3', 'feedback3', 'frequency3', 'reverb3', 'reverbGain3', 'filter3', 'filterGain3');
+		});
 
-		//player 3
-		var audioElement3 = $('#sliders audio')[2]
-		wireEffects(audioElement3, ctx, 'delayTime3', 'feedback3', 'frequency3', 'reverb3', 'reverbGain3', 'filter3', 'filterGain3');
-	});
+	$.backstretch([
+	    "http://i.imgur.com/NSxwAIe.jpg",
+			"http://i.imgur.com/DmGcSvO.jpg",
+			"http://i.imgur.com/pjwsIMe.jpg"
+	], {duration: 8000, fade: 600});
 
 	//Wiring Web Audio Effects when no new page
 	var ctx = new AudioContext();
 	//player 1
-	var audioElement = $('#sliders audio')[0]
+	var audioElement = $('#sliders audio')[0];
 	wireEffects(audioElement, ctx, 'delayTime', 'feedback', 'frequency', 'reverb', 'reverbGain', 'filter', 'filterGain');
 
 	//player 2
-	var audioElement2 = $('#sliders audio')[1]
+	var audioElement2 = $('#sliders audio')[1];
 	wireEffects(audioElement2, ctx, 'delayTime2', 'feedback2', 'frequency2', 'reverb2', 'reverbGain2', 'filter2', 'filterGain2');
 
 	//player 3
-	var audioElement3 = $('#sliders audio')[2]
+	var audioElement3 = $('#sliders audio')[2];
 	wireEffects(audioElement3, ctx, 'delayTime3', 'feedback3', 'frequency3', 'reverb3', 'reverbGain3', 'filter3', 'filterGain3');
 
 	// Calls Click Events for Canvas Page
 	clickEvents();
-});
 
+}
+
+/////////////////////////////////////////
+/////// HOME PAGE SIGNAL CHAIN //////////
+/////////////////////////////////////////
 
 function wireEffects(audioElement, ctx, inputName1, inputName2, inputName3, inputName4, inputName5, inputName6, inputName7) {
 	audioElement.addEventListener('playing', function(){
@@ -104,7 +140,7 @@ function wireEffects(audioElement, ctx, inputName1, inputName2, inputName3, inpu
     biFilterGain.gain.value = 0;
 
     biFilter.connect(biFilterGain);
-    biFilterGain.connect(ctx.destination)
+    biFilterGain.connect(ctx.destination);
 
 
 		//effect connections
@@ -114,7 +150,7 @@ function wireEffects(audioElement, ctx, inputName1, inputName2, inputName3, inpu
     source.connect(ctx.destination);
     delay.connect(ctx.destination);
     //verb.connect(ctx.destination);
-    biFilter.connect(ctx.destination);;
+    biFilter.connect(ctx.destination);
 
     var controls = $("div#sliders");
     //delay controls
@@ -124,7 +160,7 @@ function wireEffects(audioElement, ctx, inputName1, inputName2, inputName3, inpu
 
     controls.find("input[name='"+inputName2+"']").on('input', function() {
       feedback.gain.value = $(this).val();
-      console.log(feedback.gain.value)
+      console.log(feedback.gain.value);
     });
 
     controls.find("input[name='"+inputName3+"']").on('input', function() {
@@ -153,5 +189,10 @@ function wireEffects(audioElement, ctx, inputName1, inputName2, inputName3, inpu
       biFilterGain.gain.value = parseInt($(this).val());
       console.log(biFilterGain.gain.value);
     });
+
 	});
 }
+
+$(document).ready(domReady);
+// page load via turbolinks
+$(document).on('page:load', domReady);

@@ -48,7 +48,7 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 end
 
-def sign_up()
+def sign_up
   visit(root_path)
   page.find('#sign_up').click
   fill_in('Username', :with => 'DrRobotMck')
@@ -66,15 +66,25 @@ def log_in(username, password)
   click_button('LOG IN')
 end
 
-def log_out()
+def log_out
   click_link('Sign Out')
 end
 
-def delete_user()
+def delete_user
+  visit(root_path)
+  click_link(@test_user.username)
   click_link('DELETE ACCOUNT')
+  page.driver.browser.switch_to.alert.accept
 end
 
-def create_composition()
+def choose_composition
+  visit(root_path)
+  find('#category1').find(:xpath, 'option[4]').click
+  find('#category2').find(:xpath, 'option[3]').click
+  find('#category3').find(:xpath, 'option[1]').click
+end
+
+def create_and_show_composition
   visit(root_path)
   find('#category1').find(:xpath, 'option[4]').click
   find('#category2').find(:xpath, 'option[3]').click
@@ -82,12 +92,12 @@ def create_composition()
   click_button('Create Composition')
 end
 
-def create_random_composition()
+def create_random_composition
   visit(root_path)
   click_button('Random')
 end
 
-def show_composition()
+def show_composition
   visit(root_path)
   find('#category1').find(:xpath, 'option[4]').click
   find('#category2').find(:xpath, 'option[3]').click
@@ -95,7 +105,12 @@ def show_composition()
   click_button('Create Composition')
 end
 
-def view_canvas()
+def save_composition
+  fill_in('name', with: 'My Swaggity Swag Mix')
+  click_button('Save Composition')
+end
+
+def view_canvas
   visit(root_path)
   click_link('Canvas')
 end

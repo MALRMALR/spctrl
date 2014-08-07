@@ -5,26 +5,28 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'favicon.ico' %>
+
 </head>
 <body>
-  <img class="logo" src="http://i.imgur.com/0rPQKnU.png">
-
+    <img class="logo" src="http://i.imgur.com/J5yMM7C.png">
+  <div id="menu_wrapper">
   <div id="main_menu">
-    <span><%= link_to('home', root_path)%></span><span>//</span><span><%= link_to('Canvas', canvas_path)%></span>
-    <span><span>//</span>
-      <% if session[:current_user] %>
-        <% @current_user ||= User.find(session[:current_user]) %>
-        <%= link_to @current_user.username, user_path(@current_user) %><span> //</span>
-        <%= link_to 'Sign Out', logout_path %>
-      <% else %>
+    <span><%= link_to('home', root_path)%></span><span>//</span><span><%=link_to('Canvas', canvas_path)%></span><span>//</span>
+    <span><% if session[:current_user] %>
+      <% @current_user ||= User.find(session[:current_user]) %>
+      <%= link_to @current_user.username, user_path(@current_user) %><span>//</span>
+      <%= link_to 'Sign Out', logout_path %>
+    <% else %>
         <div id='modal'>
           <span id='exit'>X</span>
           <div class="form-container"></div>
           </div>
-        <span id='login'>Login</span><span>//</span>
-        <span id='sign_up'>Sign Up</span></span>
+      <span id='login'>Login</span><span>//</span>
+      <span id='sign_up'>Sign Up</span></span>
       <% end %>
     </span>
+  </div>
   </div>
 
   <div id="signup-form">
@@ -41,7 +43,4 @@
 
 
 </body>
-<!-- <footer>
-  <p>Made with &hearts; by Christiana Lai, Jon Porras, &#038; Michael Ross</p>
-</footer> -->
 </html>
