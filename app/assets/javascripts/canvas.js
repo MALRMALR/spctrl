@@ -14,11 +14,11 @@ function aMajor() {
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
-    mainosc.connect(ctx.destination);
+    mainosc.connect(ctx.destination)
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function aSharpMajor() {
@@ -31,7 +31,7 @@ function aSharpMajor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function bMajor() {
@@ -44,7 +44,7 @@ function bMajor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function cMajor() {
@@ -58,7 +58,7 @@ function cMajor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function cSharpMajor() {
@@ -71,7 +71,7 @@ function cSharpMajor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function dMajor() {
@@ -84,7 +84,7 @@ function dMajor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function dSharpMajor() {
@@ -97,7 +97,7 @@ function dSharpMajor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function eMajor() {
@@ -110,7 +110,7 @@ function eMajor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function fMajor() {
@@ -123,7 +123,7 @@ function fMajor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function fSharpMajor() {
@@ -136,7 +136,7 @@ function fSharpMajor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function gMajor() {
@@ -149,7 +149,7 @@ function gMajor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function gSharpMajor() {
@@ -162,7 +162,7 @@ function gSharpMajor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function aMinor() {
@@ -175,7 +175,7 @@ function aMinor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function aSharpMinor() {
@@ -188,7 +188,7 @@ function aSharpMinor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function bMinor() {
@@ -214,7 +214,7 @@ function cMinor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function cSharpMinor() {
@@ -227,7 +227,7 @@ function cSharpMinor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function dMinor() {
@@ -241,7 +241,7 @@ function dMinor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function dSharpMinor() {
@@ -254,7 +254,7 @@ function dSharpMinor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function eMinor() {
@@ -267,7 +267,7 @@ function eMinor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function fMinor() {
@@ -280,7 +280,7 @@ function fMinor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function fSharpMinor() {
@@ -306,7 +306,7 @@ function gMinor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function gSharpMinor() {
@@ -319,5 +319,5 @@ function gSharpMinor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
