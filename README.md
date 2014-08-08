@@ -9,6 +9,7 @@ SPCTRL is a simple web application that allows users to generate customized ambi
 
 ### Project Details
 The ERD can be found [here](https://www.lucidchart.com/documents/embeddedchart/5dc4e6b4-c1d3-464b-9077-4c0bb46c9bbc)
+
 The user stories can be found [here](https://trello.com/b/bh3EHkbN/team-philosoraptor-s-p-c-t-r-l)
 
 ### Technologies Used
