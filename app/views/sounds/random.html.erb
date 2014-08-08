@@ -23,14 +23,15 @@
                                         reverbGain: 'reverbGain3',
                                         filter: 'filter3',
                                         filterGain: 'filterGain3'} %>
-</div>
 
-<% if session[:current_user] %>
-  <%= form_tag '/compositions/create', method: 'post' , id: 'title-form' do %>
-    <%= hidden_field_tag(:sound_id1, @sounds[0].id) %>
-    <%= hidden_field_tag(:sound_id2, @sounds[1].id) %>
-    <%= hidden_field_tag(:sound_id3, @sounds[2].id) %>
-    <%= text_field_tag(:name, 'TITLE') %>
-    <%= submit_tag "Save Composition", class: 'btn' %>
+  <% if session[:current_user] %>
+    <%= form_tag '/compositions/create', method: 'post' , id: 'title-form' do %>
+      <%= hidden_field_tag(:sound_id1, @sounds[0].id) %>
+      <%= hidden_field_tag(:sound_id2, @sounds[1].id) %>
+      <%= hidden_field_tag(:sound_id3, @sounds[2].id) %>
+      <%= text_field_tag(:name, 'TITLE') %>
+      <%= submit_tag "Save Composition", class: 'btn' %>
+    <% end %>
   <% end %>
-<% end %>
+  
+</div>

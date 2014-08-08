@@ -1,4 +1,4 @@
-<p><%= @composition.name %></p>
+<p class="composition-title"><%= @composition.name %></p>
 
 <div class="demo" id="sliders">
     <%= render partial: 'sounds/sound', locals: {sound: @composition.sounds[0],
@@ -25,6 +25,8 @@
                                             reverbGain: 'reverbGain3',
                                             filter: 'filter3',
                                             filterGain: 'filterGain3'} %>
-</div>
 
-<%= link_to 'Delete Composition', "/compositions/#{@composition.id}", method: :delete %>
+  <%= form_tag("/compositions/#{@composition.id}", method: :delete) do %>
+    <%= button_tag "Delete Composition", class: "delete" %>
+  <% end %>
+</div>
