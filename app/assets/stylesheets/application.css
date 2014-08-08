@@ -262,7 +262,7 @@ canvas {
   margin: 0 auto 100px auto;
 }
 
-.composition-title {font-size: 30px;text-shadow: 2px 2px 1px #000;}
+.composition-title {font-size: 30px;text-shadow: 2px 2px 1px #000;text-transform:uppercase}
 
 #username, #password, #user_username, #user_password, #user_password_confirmation {
   width: 180px;
