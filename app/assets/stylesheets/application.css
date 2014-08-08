@@ -255,28 +255,18 @@ canvas {
 .demo#sliders {
   position: relative;
   text-align: center;
-  padding-top: 40px;
   padding-left: 120px;
   margin-bottom: 20px;
+  height: 350px;
   width: 1100px;
-  margin: 0 auto 80px auto;
+  margin: 0 auto 100px auto;
 }
+
+.composition-title {font-size: 30px;text-shadow: 2px 2px 1px #000;}
 
 #username, #password, #user_username, #user_password, #user_password_confirmation {
   width: 180px;
   padding: 3px;
-}
-
-.btn {
-  border: 3px solid #FFF;
-  background: rgba(0,0,0,0);
-  letter-spacing: 1px;
-  border-radius: 2px;
-  color: #FFF;
-  padding: 10px 15px;
-  text-align: center;
-  cursor: pointer;
-  text-transform: uppercase;
 }
 
 .soundBox {
@@ -298,8 +288,24 @@ canvas {
 }
 
 input#name {
-  margin-left: px;
+  margin-top: 20px;
   padding: 10px 0;
   background: #000;
   color: #fff;
+  padding-left: 8px;
+}
+
+.delete {
+  border: 3px solid #FFF;
+  background: rgba(0,0,0,0);
+  letter-spacing: 1px;
+  border-radius: 2px;
+  color: #FFF;
+  padding: 10px 15px;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin: 0 auto;
+  font-family: helvetica;
+  width: 200px;
 }
