@@ -26,6 +26,8 @@ function domReady(){
 	$('body').on('click', '#login', showLogIn);
 	$('body').on('click', '#sign_up', showSignUp);
 	$('#modal').on('click', '#exit', hideModal);
+
+	// STUFF FOR CANVAS //
 	$('#myCanvas').mousedown(aMajor);
   $('#myCanvas1').mousedown(aSharpMajor);
   $('#myCanvas2').mousedown(bMajor);
@@ -50,6 +52,8 @@ function domReady(){
   $('#myCanvas21').mousedown(fSharpMinor);
   $('#myCanvas22').mousedown(gMinor);
   $('#myCanvas23').mousedown(gSharpMinor);
+
+	/////////////////////////////
 
 		$(document).on("page:load", function() {
 			//Wiring Web Audio Effects
@@ -86,9 +90,6 @@ function domReady(){
 	//player 3
 	var audioElement3 = $('#sliders audio')[2];
 	wireEffects(audioElement3, ctx, 'delayTime3', 'feedback3', 'frequency3', 'reverb3', 'reverbGain3', 'filter3', 'filterGain3');
-
-	// Calls Click Events for Canvas Page
-	clickEvents();
 
 }
 
