@@ -38,7 +38,7 @@ group :development, :test do
   gem 'shoulda-matchers', require: false
 end
 
-
+gem 'rails_12factor', group: :production
 # Use unicorn as the app server
 # gem 'unicorn'
 
