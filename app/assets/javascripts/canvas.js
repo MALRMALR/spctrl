@@ -14,7 +14,7 @@ function aMajor() {
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
-    mainosc.connect(ctx.destination)
+    mainosc.connect(ctx.destination);
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
