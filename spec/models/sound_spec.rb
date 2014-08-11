@@ -16,6 +16,7 @@ describe Sound do
   it "has a valid url property" do
     expect(sound1.url).to eq("https://s3.amazonaws.com/spctrl/207558__edtijo__happy-guitar.mp3")
     expect(sound2.url).to eq("https://s3.amazonaws.com/spctrl/100263__sagetyrtle__062510-park.mp3")
+    expect(sound3.url).to eq("https://s3.amazonaws.com/spctrl/153444__orginaljun__angry-fast-mac-keyboard-typing+1.mp3")
   end
 
 end

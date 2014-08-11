@@ -10,7 +10,7 @@ var ctx = new (window.AudioContext || window.webkitAudioContext);
 
 function aMajor() {
   // E, G, B
-  var freq = [294.94, 329.63, 392]
+  var freq = [294.94, 329.63, 392];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -18,12 +18,12 @@ function aMajor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function aSharpMajor() {
   // A#, C#, F
-  var freq = [466.16, 277.18, 349.23]
+  var freq = [466.16, 277.18, 349.23];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -31,12 +31,12 @@ function aSharpMajor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function bMajor() {
   // A, C#, E
-  var freq = [440, 554.37, 329.63, 659.25]
+  var freq = [440, 554.37, 329.63, 659.25];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -44,7 +44,7 @@ function bMajor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function cMajor() {
@@ -58,7 +58,7 @@ function cMajor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function cSharpMajor() {
@@ -71,7 +71,7 @@ function cSharpMajor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function dMajor() {
@@ -84,12 +84,12 @@ function dMajor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function dSharpMajor() {
   // D#, G, A#
-  var freq = [311.13, 392, 466.16]
+  var freq = [311.13, 392, 466.16];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -97,12 +97,12 @@ function dSharpMajor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function eMajor() {
   //E, G, B
-  var freq = [329.63, 392, 493.88]
+  var freq = [329.63, 392, 493.88];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -110,7 +110,7 @@ function eMajor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function fMajor() {
@@ -123,12 +123,12 @@ function fMajor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function fSharpMajor() {
   // F#, A#, C#
-  var freq = [369.99, 466.16, 554.37]
+  var freq = [369.99, 466.16, 554.37];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -136,7 +136,7 @@ function fSharpMajor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function gMajor() {
@@ -149,12 +149,12 @@ function gMajor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function gSharpMajor() {
   // G#, C, D#
-  var freq = [415.30, 440, 622.25]
+  var freq = [415.30, 440, 622.25];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -162,7 +162,7 @@ function gSharpMajor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function aMinor() {
@@ -175,12 +175,12 @@ function aMinor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function aSharpMinor() {
   // A#, C#, F
-  var freq = [233.08, 277.18, 349.23]
+  var freq = [233.08, 277.18, 349.23];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -188,7 +188,7 @@ function aSharpMinor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function bMinor() {
@@ -201,12 +201,12 @@ function bMinor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function cMinor() {
   // B, D#, F#
-  var freq = [246.94, 311.13, 369.99]
+  var freq = [246.94, 311.13, 369.99];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -214,7 +214,7 @@ function cMinor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function cSharpMinor() {
@@ -227,7 +227,7 @@ function cSharpMinor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function dMinor() {
@@ -241,12 +241,12 @@ function dMinor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function dSharpMinor() {
   // D#, F#, A#
-  var freq = [311.13, 369.99, 466.16]
+  var freq = [311.13, 369.99, 466.16];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -254,12 +254,12 @@ function dSharpMinor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function eMinor() {
   // E, G, B
-  var freq = [329.63, 392, 493.88]
+  var freq = [329.63, 392, 493.88];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -267,12 +267,12 @@ function eMinor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function fMinor() {
   // F, G#, C
-  var freq = [349.23, 415.30, 440]
+  var freq = [349.23, 415.30, 440];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -280,12 +280,12 @@ function fMinor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function fSharpMinor() {
   // F#, A, C#
-  var freq = [369, 440, 554.37]
+  var freq = [369, 440, 554.37];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -293,12 +293,12 @@ function fSharpMinor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function gMinor() {
   // G, A#, D
-  var freq = [392, 466.16, 587.33]
+  var freq = [392, 466.16, 587.33];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -306,12 +306,12 @@ function gMinor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function gSharpMinor() {
   // G#, B, D#
-  var freq = [415.30, 493.88, 622.25]
+  var freq = [415.30, 493.88, 622.25];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -319,5 +319,5 @@ function gSharpMinor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
