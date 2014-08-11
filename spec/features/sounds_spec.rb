@@ -5,8 +5,8 @@ describe "Sounds", js: true do
   it "creates a new composition with categories melodic, neutral, and study" do
     choose_composition
     expect(page).to have_content('melodic')
-    expect(page).to have_content('light')
-    expect(page).to have_content('sleep')
+    expect(page).to have_content('neutral')
+    expect(page).to have_content('study')
     click_button('Create Composition')
     expect(page).to have_css('#sliders')
   end
