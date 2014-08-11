@@ -10,7 +10,7 @@ var ctx = new (window.AudioContext || window.webkitAudioContext);
 
 function aMajor() {
   // E, G, B
-  var freq = [294.94, 329.63, 392]
+  var freq = [294.94, 329.63, 392];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -23,7 +23,7 @@ function aMajor() {
 
 function aSharpMajor() {
   // A#, C#, F
-  var freq = [466.16, 277.18, 349.23]
+  var freq = [466.16, 277.18, 349.23];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -36,7 +36,7 @@ function aSharpMajor() {
 
 function bMajor() {
   // A, C#, E
-  var freq = [440, 554.37, 329.63, 659.25]
+  var freq = [440, 554.37, 329.63, 659.25];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -89,7 +89,7 @@ function dMajor() {
 
 function dSharpMajor() {
   // D#, G, A#
-  var freq = [311.13, 392, 466.16]
+  var freq = [311.13, 392, 466.16];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -102,7 +102,7 @@ function dSharpMajor() {
 
 function eMajor() {
   //E, G, B
-  var freq = [329.63, 392, 493.88]
+  var freq = [329.63, 392, 493.88];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -128,7 +128,7 @@ function fMajor() {
 
 function fSharpMajor() {
   // F#, A#, C#
-  var freq = [369.99, 466.16, 554.37]
+  var freq = [369.99, 466.16, 554.37];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -154,7 +154,7 @@ function gMajor() {
 
 function gSharpMajor() {
   // G#, C, D#
-  var freq = [415.30, 440, 622.25]
+  var freq = [415.30, 440, 622.25];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -180,7 +180,7 @@ function aMinor() {
 
 function aSharpMinor() {
   // A#, C#, F
-  var freq = [233.08, 277.18, 349.23]
+  var freq = [233.08, 277.18, 349.23];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -201,12 +201,12 @@ function bMinor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function cMinor() {
   // B, D#, F#
-  var freq = [246.94, 311.13, 369.99]
+  var freq = [246.94, 311.13, 369.99];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -246,7 +246,7 @@ function dMinor() {
 
 function dSharpMinor() {
   // D#, F#, A#
-  var freq = [311.13, 369.99, 466.16]
+  var freq = [311.13, 369.99, 466.16];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -259,7 +259,7 @@ function dSharpMinor() {
 
 function eMinor() {
   // E, G, B
-  var freq = [329.63, 392, 493.88]
+  var freq = [329.63, 392, 493.88];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -272,7 +272,7 @@ function eMinor() {
 
 function fMinor() {
   // F, G#, C
-  var freq = [349.23, 415.30, 440]
+  var freq = [349.23, 415.30, 440];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -285,7 +285,7 @@ function fMinor() {
 
 function fSharpMinor() {
   // F#, A, C#
-  var freq = [369, 440, 554.37]
+  var freq = [369, 440, 554.37];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -293,12 +293,12 @@ function fSharpMinor() {
     currentTime = ctx.currentTime;
     mainosc.start(currentTime);
     mainosc.stop(currentTime + 0.6);
-  };
+  }
 }
 
 function gMinor() {
   // G, A#, D
-  var freq = [392, 466.16, 587.33]
+  var freq = [392, 466.16, 587.33];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
@@ -311,7 +311,7 @@ function gMinor() {
 
 function gSharpMinor() {
   // G#, B, D#
-  var freq = [415.30, 493.88, 622.25]
+  var freq = [415.30, 493.88, 622.25];
   for (var i = 0; i < freq.length; i++) {
     var mainosc = ctx.createOscillator();
     mainosc.frequency.value = freq[i];
