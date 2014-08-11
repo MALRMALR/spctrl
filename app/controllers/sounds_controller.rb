@@ -17,4 +17,7 @@ class SoundsController < ApplicationController
     @sound3 = Sound.where(category: params[:category3]).sample(1)
   end
 
+  def canvas
+    @user = User.new
+  end
 end

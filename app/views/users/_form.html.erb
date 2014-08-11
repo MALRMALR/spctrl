@@ -1,7 +1,7 @@
 <h3>SIGN UP</h3>
 
 <ul>
-  <% @user.errors.full_messages.each do |message| %>
+  <% user.errors.full_messages.each do |message| %>
     <li><p><%= message %></p></li>
   <% end %>
 </ul>
